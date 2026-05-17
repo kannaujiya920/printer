@@ -78,7 +78,7 @@ const Home = () => {
           onClick={() => navigate("/specifications")}
           className="bg-white text-[#F26522] font-sans font-extrabold text-sm sm:text-base px-8 py-3.5 rounded-xl shadow-xl uppercase tracking-wider hover:bg-slate-50 transition-all duration-300 transform active:scale-95 z-30 ml-auto translate-y-0 cursor-pointer border border-transparent whitespace-nowrap"
         >
-          Next Modle 
+          Modle 
         </button>
       </div>
 

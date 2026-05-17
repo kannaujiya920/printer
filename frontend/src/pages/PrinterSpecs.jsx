@@ -122,17 +122,18 @@ const PrinterSpecs = () => {
         { label: "A4 Scan Speed - Colour (Image Per Minute) @ 200 x 200 dpi", value: "NOT APPLICABLE" },
       ],
     },
+    // OM52 comes BEFORE OM221 (swapped)
     {
-      id: "OM221",
-      name: "OM221",
-      folderKey: "OM221",
-      model: "M6518",
+      id: "OM52",
+      name: "OM52",
+      folderKey: "OM52",
+      model: "M6512NW",
       type: "Professional All-in-One Laser Printer",
       tag: "All-in-One Series",
       color: false,
       specs: [
-        { label: "Model", value: "M6518" },
-        { label: "Acxxel", value: "OM221" },
+        { label: "Model", value: "M6512NW" },
+        { label: "Acxxel", value: "OM52" },
         { label: "Function (Print/Copy/Scan)", value: "Print/Copy/Scan" },
         { label: "Duplex Printing", value: "No" },
         { label: "Mono", value: "Yes" },
@@ -159,17 +160,18 @@ const PrinterSpecs = () => {
         { label: "A4 Scan Speed - Colour (Image Per Minute) @ 200 x 200 dpi", value: "NOT APPLICABLE" },
       ],
     },
+    // OM221 comes AFTER OM52 (swapped)
     {
-      id: "OM52",
-      name: "OM52",
-      folderKey: "OM52",
-      model: "M6512NW",
+      id: "OM221",
+      name: "OM221",
+      folderKey: "OM221",
+      model: "M6518",
       type: "Professional All-in-One Laser Printer",
       tag: "All-in-One Series",
       color: false,
       specs: [
-        { label: "Model", value: "M6512NW" },
-        { label: "Acxxel", value: "OM52" },
+        { label: "Model", value: "M6518" },
+        { label: "Acxxel", value: "OM221" },
         { label: "Function (Print/Copy/Scan)", value: "Print/Copy/Scan" },
         { label: "Duplex Printing", value: "No" },
         { label: "Mono", value: "Yes" },
@@ -355,6 +357,16 @@ const PrinterSpecs = () => {
   const currentModel = modelsData[currentIndex];
   const isLastPage = currentIndex === modelsData.length;
 
+  // Group models by their tag/series for the tab header display
+  const seriesGroups = modelsData.reduce((acc, model, idx) => {
+    const tag = model.tag;
+    if (!acc[tag]) {
+      acc[tag] = [];
+    }
+    acc[tag].push({ ...model, idx });
+    return acc;
+  }, {});
+
   const getImagePath = (folderKey, view) => {
     const viewMap = {
       front: "front_view.png",
@@ -417,8 +429,8 @@ const PrinterSpecs = () => {
           </button>
           <div className="text-right">
             <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-red-600">
-  Laps N Tabs Technology Pvt. Ltd.
-</h1>
+              Laps N Tabs Technology Pvt. Ltd.
+            </h1>
             <p className="mt-1 text-xs font-bold uppercase tracking-[0.2em] text-[#F26522]">
               ACXXEL Printer Catalogue
             </p>
@@ -426,34 +438,46 @@ const PrinterSpecs = () => {
         </div>
 
         {/* Model Tabs */}
-        <div className="mb-6 overflow-x-auto scrollbar-hide">
-          <div className="flex flex-wrap justify-center gap-2 min-w-max">
-            {modelsData.map((model, idx) => (
-              <button
-                key={model.id}
-                type="button"
-                onClick={() => handleModelClick(idx)}
-                className={`px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 border ${
-                  idx === currentIndex
-                    ? "border-[#F26522] bg-[#F26522] text-white shadow-lg shadow-orange-500/20 scale-105"
-                    : "border-slate-200 bg-white text-slate-500 hover:border-[#F26522] hover:text-[#F26522] hover:shadow-md"
-                }`}
-              >
-                {model.name}
-              </button>
-            ))}
+        <div className="mb-6 flex flex-wrap justify-center gap-2">
+          {seriesGroups["Printer Series"]?.map(({ name, idx }) => (
             <button
+              key={name}
               type="button"
-              onClick={() => setCurrentIndex(modelsData.length)}
+              onClick={() => handleModelClick(idx)}
               className={`px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 border ${
-                isLastPage
-                  ? "border-slate-900 bg-slate-900 text-white shadow-lg"
-                  : "border-slate-200 bg-white text-slate-500 hover:border-slate-900 hover:text-slate-900 hover:shadow-md"
+                idx === currentIndex
+                  ? "border-[#F26522] bg-[#F26522] text-white shadow-lg shadow-orange-500/20 scale-105"
+                  : "border-slate-200 bg-white text-slate-500 hover:border-[#F26522] hover:text-[#F26522] hover:shadow-md"
               }`}
             >
-              Summary
+              {name}
             </button>
-          </div>
+          ))}
+          {seriesGroups["All-in-One Series"]?.map(({ name, idx }) => (
+            <button
+              key={name}
+              type="button"
+              onClick={() => handleModelClick(idx)}
+              className={`px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 border ${
+                idx === currentIndex
+                  ? "border-[#F26522] bg-[#F26522] text-white shadow-lg shadow-orange-500/20 scale-105"
+                  : "border-slate-200 bg-white text-slate-500 hover:border-[#F26522] hover:text-[#F26522] hover:shadow-md"
+              }`}
+            >
+              {name}
+            </button>
+          ))}
+          <button
+            type="button"
+            onClick={() => setCurrentIndex(modelsData.length)}
+            className={`px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 border ${
+              isLastPage
+                ? "border-slate-900 bg-slate-900 text-white shadow-lg"
+                : "border-slate-200 bg-white text-slate-500 hover:border-slate-900 hover:text-slate-900 hover:shadow-md"
+            }`}
+          >
+            Summary
+          </button>
         </div>
 
         {!isLastPage ? (
