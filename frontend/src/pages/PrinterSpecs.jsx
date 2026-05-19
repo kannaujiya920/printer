@@ -10,42 +10,52 @@ const PrinterSpecs = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [currentIndex]);
 
+  // Sorted in increasing order: OM035, OM050, OM052, OM52, OM221, OM235, OM240, OM249, OM271
   const modelsData = [
     {
-      id: "OM052",
-      name: "OM052",
-      folderKey: "OM052",
-      model: "P2210",
-      type: "Compact Mono Laser Printer",
+      id: "OM035",
+      name: "OM035",
+      folderKey: "OM035",
+      model: "P3308DW",
+      type: "Duplex Mono Laser Printer",
       tag: "Printer Series",
       color: false,
       specs: [
-        { label: "Model", value: "P2210" },
-        { label: "Acxxel", value: "OM052" },
+        { label: "Model", value: "P3308DW" },
+        { label: "Acxxel", value: "OM035" },
         { label: "Function (Print/Copy/Scan)", value: "Print" },
-        { label: "Duplex Printing", value: "No" },
+        { label: "Duplex Printing", value: "Yes" },
         { label: "Mono", value: "Yes" },
-        { label: "Colour", value: "No" },
-        { label: "Composite /Separate toner drum", value: "Composite Cartridge" },
-        { label: "Print Speed ppm (A4)", value: "20" },
-        { label: "First Print Out Time", value: "<7.8s" },
-        { label: "Processor Speed (MHz)", value: "600" },
-        { label: "Memory (MB)", value: "128" },
+        { label: "Colour", value: "NA" },
+        { label: "Composite /Separate toner drum", value: "Separate toner drum" },
+        { label: "Print Speed ppm (A4)", value: "42" },
+        { label: "First Print Out Time", value: "<82s" },
+        { label: "Processor Speed (MHz)", value: "350" },
+        { label: "Memory (MB)", value: "256" },
         { label: "USB 2.0 / High-Speed USB", value: "Yes" },
-        { label: "Wi-Fi", value: "No" },
-        { label: "NW/LAN", value: "No" },
-        { label: "BT", value: "No" },
-        { label: "Mobile Printing", value: "No" },
-        { label: "NFC", value: "No" },
-        { label: "ADF/DADF", value: "No" },
-        { label: "Yield per toner", value: "1600" },
-        { label: "Total Main Paper Tray Combined Capacity (Number) at 75 GSM", value: "150" },
-        { label: "Bypass Tray Facility", value: "NO" },
-        { label: "Bypass Tray Capacity at 75 GSM", value: "NOT APPLICABLE" },
-        { label: "Duty Cycle (Number of Prints/Month)", value: "15000" },
-        { label: "Feeder Capacity (Number of Sheets) (For Scanning and Copying)", value: "NOT APPLICABLE" },
-        { label: "Maximum Number of Prints covered under Product warrantY", value: "120000" },
-        { label: "A4 Scan Speed - Colour (Image Per Minute) @ 200 x 200 dpi", value: "NOT APPLICABLE" },
+        { label: "Wi-Fi", value: "Yes" },
+        { label: "NW/LAN", value: "Yes" },
+        { label: "BT", value: "NA" },
+        { label: "Mobile Printing", value: "Yes" },
+        { label: "NFC", value: "Yes" },
+        { label: "ADF/DADF", value: "NA" },
+        { label: "Yield per toner", value: "NA" },
+        { label: "Total Main Paper Tray Combined Capacity (Number) at 75 GSM", value: "250" },
+        { label: "Bypass Tray Facility", value: "Yes" },
+        { label: "Bypass Tray Capacity at 75 GSM", value: "1" },
+        { label: "Duty Cycle (Number of Prints/Month)", value: "60000" },
+        { label: "Feeder Capacity (Number of Sheets) (For Scanning and Copying)", value: "NA" },
+        { label: "Maximum Number of Prints covered under Product warrantY", value: "NA" },
+        { label: "A4 Scan Speed - Colour (Image Per Minute) @ 200 x 200 dpi", value: "NA" },
+        { label: "Printer Technology", value: "Laser" },
+        { label: "Availability of Fax", value: "NA" },
+        { label: "Page Size", value: "A4/Legal" },
+        { label: "Scan Area", value: "A4/Legal" },
+        { label: "No. Of Paper Tray", value: "1" },
+        { label: "Warranty", value: "1 Year (Add on Options Available)" },
+        { label: "USB Direct Printer", value: "NA" },
+        { label: "OS", value: "Linux/Window" },
+        { label: "Reduction Environment Feature", value: "NA" },
       ],
     },
     {
@@ -61,65 +71,83 @@ const PrinterSpecs = () => {
         { label: "Acxxel", value: "OM050" },
         { label: "Function (Print/Copy/Scan)", value: "Print" },
         { label: "Duplex Printing", value: "Yes" },
-        { label: "Mono", value: "No" },
+        { label: "Mono", value: "NA" },
         { label: "Colour", value: "Yes" },
         { label: "Composite /Separate toner drum", value: "Composite Cartridge" },
-        { label: "Print Speed ppm (A4)", value: "20" },
+        { label: "Print Speed ppm (A4)", value: "42" },
         { label: "First Print Out Time", value: "10s" },
         { label: "Processor Speed (MHz)", value: "500" },
         { label: "Memory (MB)", value: "512" },
         { label: "USB 2.0 / High-Speed USB", value: "Yes" },
         { label: "Wi-Fi", value: "Yes" },
         { label: "NW/LAN", value: "Yes" },
-        { label: "BT", value: "Yes" },
+        { label: "BT", value: "NA" },
         { label: "Mobile Printing", value: "Yes" },
-        { label: "NFC", value: "No" },
-        { label: "ADF/DADF", value: "No" },
-        { label: "Yield per toner", value: "15000" },
-        { label: "Total Main Paper Tray Combined Capacity (Number) at 75 GSM", value: "250" },
-        { label: "Bypass Tray Facility", value: "YES" },
-        { label: "Bypass Tray Capacity at 75 GSM", value: "1" },
-        { label: "Duty Cycle (Number of Prints/Month)", value: "30000" },
-        { label: "Feeder Capacity (Number of Sheets) (For Scanning and Copying)", value: "NOT APPLICABLE" },
-        { label: "Maximum Number of Prints covered under Product warrantY", value: "240000" },
-        { label: "A4 Scan Speed - Colour (Image Per Minute) @ 200 x 200 dpi", value: "NOT APPLICABLE" },
-      ],
-    },
-    {
-      id: "OM271",
-      name: "OM271",
-      folderKey: "OM271",
-      model: "CM2100DW",
-      type: "Commercial Workgroup Colour MFP",
-      tag: "All-in-One Series",
-      color: true,
-      specs: [
-        { label: "Model", value: "CM2100DW" },
-        { label: "Acxxel", value: "OM271" },
-        { label: "Function (Print/Copy/Scan)", value: "Print/Copy/Scan" },
-        { label: "Duplex Printing", value: "Yes" },
-        { label: "Mono", value: "No" },
-        { label: "Colour", value: "Yes" },
-        { label: "Composite /Separate toner drum", value: "Composite Cartridge" },
-        { label: "Print Speed ppm (A4)", value: "20" },
-        { label: "First Print Out Time", value: "12s" },
-        { label: "Processor Speed (MHz)", value: "500" },
-        { label: "Memory (MB)", value: "512" },
-        { label: "USB 2.0 / High-Speed USB", value: "Yes" },
-        { label: "Wi-Fi", value: "Yes" },
-        { label: "NW/LAN", value: "Yes" },
-        { label: "BT", value: "Yes" },
-        { label: "Mobile Printing", value: "Yes" },
-        { label: "NFC", value: "No" },
-        { label: "ADF/DADF", value: "No" },
-        { label: "Yield per toner", value: "15000" },
+        { label: "NFC", value: "NA" },
+        { label: "ADF/DADF", value: "NA" },
+        { label: "Yield per toner", value: "NA" },
         { label: "Total Main Paper Tray Combined Capacity (Number) at 75 GSM", value: "250" },
         { label: "Bypass Tray Facility", value: "Yes" },
         { label: "Bypass Tray Capacity at 75 GSM", value: "1" },
         { label: "Duty Cycle (Number of Prints/Month)", value: "30000" },
-        { label: "Feeder Capacity (Number of Sheets) (For Scanning and Copying)", value: "NOT APPLICABLE" },
-        { label: "Maximum Number of Prints covered under Product warrantY", value: "240000" },
-        { label: "A4 Scan Speed - Colour (Image Per Minute) @ 200 x 200 dpi", value: "NOT APPLICABLE" },
+        { label: "Feeder Capacity (Number of Sheets) (For Scanning and Copying)", value: "NA" },
+        { label: "Maximum Number of Prints covered under Product warrantY", value: "NA" },
+        { label: "A4 Scan Speed - Colour (Image Per Minute) @ 200 x 200 dpi", value: "NA" },
+        { label: "Printer Technology", value: "Laser" },
+        { label: "Availability of Fax", value: "NA" },
+        { label: "Page Size", value: "A4/Legal" },
+        { label: "Scan Area", value: "A4/Legal" },
+        { label: "No. Of Paper Tray", value: "1" },
+        { label: "Warranty", value: "1 Year (Add on Options Available)" },
+        { label: "USB Direct Printer", value: "NA" },
+        { label: "OS", value: "Linux/Window" },
+        { label: "Reduction Environment Feature", value: "NA" },
+      ],
+    },
+    {
+      id: "OM052",
+      name: "OM052",
+      folderKey: "OM052",
+      model: "P2210",
+      type: "Compact Mono Laser Printer",
+      tag: "Printer Series",
+      color: false,
+      specs: [
+        { label: "Model", value: "P2210" },
+        { label: "Acxxel", value: "OM052" },
+        { label: "Function (Print/Copy/Scan)", value: "Print" },
+        { label: "Duplex Printing", value: "NA" },
+        { label: "Mono", value: "Yes" },
+        { label: "Colour", value: "NA" },
+        { label: "Composite /Separate toner drum", value: "Composite Cartridge" },
+        { label: "Print Speed ppm (A4)", value: "42" },
+        { label: "First Print Out Time", value: "<78s" },
+        { label: "Processor Speed (MHz)", value: "600" },
+        { label: "Memory (MB)", value: "128" },
+        { label: "USB 2.0 / High-Speed USB", value: "Yes" },
+        { label: "Wi-Fi", value: "NA" },
+        { label: "NW/LAN", value: "NA" },
+        { label: "BT", value: "NA" },
+        { label: "Mobile Printing", value: "NA" },
+        { label: "NFC", value: "NA" },
+        { label: "ADF/DADF", value: "NA" },
+        { label: "Yield per toner", value: "NA" },
+        { label: "Total Main Paper Tray Combined Capacity (Number) at 75 GSM", value: "150" },
+        { label: "Bypass Tray Facility", value: "NA" },
+        { label: "Bypass Tray Capacity at 75 GSM", value: "NA" },
+        { label: "Duty Cycle (Number of Prints/Month)", value: "15000" },
+        { label: "Feeder Capacity (Number of Sheets) (For Scanning and Copying)", value: "NA" },
+        { label: "Maximum Number of Prints covered under Product warrantY", value: "NA" },
+        { label: "A4 Scan Speed - Colour (Image Per Minute) @ 200 x 200 dpi", value: "NA" },
+        { label: "Printer Technology", value: "Laser" },
+        { label: "Availability of Fax", value: "NA" },
+        { label: "Page Size", value: "A4/Legal" },
+        { label: "Scan Area", value: "A4/Legal" },
+        { label: "No. Of Paper Tray", value: "1" },
+        { label: "Warranty", value: "1 Year (Add on Options Available)" },
+        { label: "USB Direct Printer", value: "NA" },
+        { label: "OS", value: "Linux/Window" },
+        { label: "Reduction Environment Feature", value: "NA" },
       ],
     },
     {
@@ -134,29 +162,38 @@ const PrinterSpecs = () => {
         { label: "Model", value: "M6512NW" },
         { label: "Acxxel", value: "OM52" },
         { label: "Function (Print/Copy/Scan)", value: "Print/Copy/Scan" },
-        { label: "Duplex Printing", value: "No" },
+        { label: "Duplex Printing", value: "NA" },
         { label: "Mono", value: "Yes" },
-        { label: "Colour", value: "No" },
+        { label: "Colour", value: "NA" },
         { label: "Composite /Separate toner drum", value: "Composite Cartridge" },
-        { label: "Print Speed ppm (A4)", value: "22" },
-        { label: "First Print Out Time", value: "<7.8s" },
+        { label: "Print Speed ppm (A4)", value: "25" },
+        { label: "First Print Out Time", value: "<78s" },
         { label: "Processor Speed (MHz)", value: "600" },
         { label: "Memory (MB)", value: "128" },
         { label: "USB 2.0 / High-Speed USB", value: "Yes" },
         { label: "Wi-Fi", value: "Yes" },
         { label: "NW/LAN", value: "Yes" },
-        { label: "BT", value: "No" },
+        { label: "BT", value: "NA" },
         { label: "Mobile Printing", value: "Yes" },
-        { label: "NFC", value: "No" },
-        { label: "ADF/DADF", value: "No" },
-        { label: "Yield per toner", value: "1600" },
+        { label: "NFC", value: "NA" },
+        { label: "ADF/DADF", value: "NA" },
+        { label: "Yield per toner", value: "NA" },
         { label: "Total Main Paper Tray Combined Capacity (Number) at 75 GSM", value: "150" },
-        { label: "Bypass Tray Facility", value: "NO" },
-        { label: "Bypass Tray Capacity at 75 GSM", value: "NOT APPLICABLE" },
+        { label: "Bypass Tray Facility", value: "NA" },
+        { label: "Bypass Tray Capacity at 75 GSM", value: "NA" },
         { label: "Duty Cycle (Number of Prints/Month)", value: "20000" },
-        { label: "Feeder Capacity (Number of Sheets) (For Scanning and Copying)", value: "NOT APPLICABLE" },
-        { label: "Maximum Number of Prints covered under Product warrantY", value: "240000" },
-        { label: "A4 Scan Speed - Colour (Image Per Minute) @ 200 x 200 dpi", value: "NOT APPLICABLE" },
+        { label: "Feeder Capacity (Number of Sheets) (For Scanning and Copying)", value: "NA" },
+        { label: "Maximum Number of Prints covered under Product warrantY", value: "NA" },
+        { label: "A4 Scan Speed - Colour (Image Per Minute) @ 200 x 200 dpi", value: "NA" },
+        { label: "Printer Technology", value: "Laser" },
+        { label: "Availability of Fax", value: "NA" },
+        { label: "Page Size", value: "A4/Legal" },
+        { label: "Scan Area", value: "A4/Legal" },
+        { label: "No. Of Paper Tray", value: "1" },
+        { label: "Warranty", value: "1 Year (Add on Options Available)" },
+        { label: "USB Direct Printer", value: "NA" },
+        { label: "OS", value: "MAC (IOS)" },
+        { label: "Reduction Environment Feature", value: "Yes" },
       ],
     },
     {
@@ -171,66 +208,38 @@ const PrinterSpecs = () => {
         { label: "Model", value: "M6518" },
         { label: "Acxxel", value: "OM221" },
         { label: "Function (Print/Copy/Scan)", value: "Print/Copy/Scan" },
-        { label: "Duplex Printing", value: "No" },
+        { label: "Duplex Printing", value: "NA" },
         { label: "Mono", value: "Yes" },
-        { label: "Colour", value: "No" },
+        { label: "Colour", value: "NA" },
         { label: "Composite /Separate toner drum", value: "Composite Cartridge" },
-        { label: "Print Speed ppm (A4)", value: "22" },
-        { label: "First Print Out Time", value: "<7.8s" },
+        { label: "Print Speed ppm (A4)", value: "25" },
+        { label: "First Print Out Time", value: "<78s" },
         { label: "Processor Speed (MHz)", value: "600" },
         { label: "Memory (MB)", value: "128" },
         { label: "USB 2.0 / High-Speed USB", value: "Yes" },
         { label: "Wi-Fi", value: "Yes" },
         { label: "NW/LAN", value: "Yes" },
-        { label: "BT", value: "No" },
+        { label: "BT", value: "NA" },
         { label: "Mobile Printing", value: "Yes" },
-        { label: "NFC", value: "No" },
-        { label: "ADF/DADF", value: "No" },
-        { label: "Yield per toner", value: "1600" },
+        { label: "NFC", value: "NA" },
+        { label: "ADF/DADF", value: "NA" },
+        { label: "Yield per toner", value: "NA" },
         { label: "Total Main Paper Tray Combined Capacity (Number) at 75 GSM", value: "150" },
-        { label: "Bypass Tray Facility", value: "NO" },
-        { label: "Bypass Tray Capacity at 75 GSM", value: "NOT APPLICABLE" },
+        { label: "Bypass Tray Facility", value: "NA" },
+        { label: "Bypass Tray Capacity at 75 GSM", value: "NA" },
         { label: "Duty Cycle (Number of Prints/Month)", value: "20000" },
-        { label: "Feeder Capacity (Number of Sheets) (For Scanning and Copying)", value: "NOT APPLICABLE" },
-        { label: "Maximum Number of Prints covered under Product warrantY", value: "240000" },
-        { label: "A4 Scan Speed - Colour (Image Per Minute) @ 200 x 200 dpi", value: "NOT APPLICABLE" },
-      ],
-    },
-    {
-      id: "OM035",
-      name: "OM035",
-      folderKey: "OM035",
-      model: "P3308DW",
-      type: "Duplex Mono Laser Printer",
-      tag: "Printer Series",
-      color: false,
-      specs: [
-        { label: "Model", value: "P3308DW" },
-        { label: "Acxxel", value: "OM035" },
-        { label: "Function (Print/Copy/Scan)", value: "Print" },
-        { label: "Duplex Printing", value: "Yes" },
-        { label: "Mono", value: "Yes" },
-        { label: "Colour", value: "No" },
-        { label: "Composite /Separate toner drum", value: "Separate toner drum" },
-        { label: "Print Speed ppm (A4)", value: "33" },
-        { label: "First Print Out Time", value: "<8.2s" },
-        { label: "Processor Speed (MHz)", value: "350" },
-        { label: "Memory (MB)", value: "256" },
-        { label: "USB 2.0 / High-Speed USB", value: "Yes" },
-        { label: "Wi-Fi", value: "Yes" },
-        { label: "NW/LAN", value: "Yes" },
-        { label: "BT", value: "No" },
-        { label: "Mobile Printing", value: "Yes" },
-        { label: "NFC", value: "Yes" },
-        { label: "ADF/DADF", value: "No" },
-        { label: "Yield per toner", value: "12000" },
-        { label: "Total Main Paper Tray Combined Capacity (Number) at 75 GSM", value: "250" },
-        { label: "Bypass Tray Facility", value: "YES" },
-        { label: "Bypass Tray Capacity at 75 GSM", value: "1" },
-        { label: "Duty Cycle (Number of Prints/Month)", value: "60000" },
-        { label: "Feeder Capacity (Number of Sheets) (For Scanning and Copying)", value: "NOT APPLICABLE" },
-        { label: "Maximum Number of Prints covered under Product warrantY", value: "480000" },
-        { label: "A4 Scan Speed - Colour (Image Per Minute) @ 200 x 200 dpi", value: "NOT APPLICABLE" },
+        { label: "Feeder Capacity (Number of Sheets) (For Scanning and Copying)", value: "NA" },
+        { label: "Maximum Number of Prints covered under Product warrantY", value: "NA" },
+        { label: "A4 Scan Speed - Colour (Image Per Minute) @ 200 x 200 dpi", value: "NA" },
+        { label: "Printer Technology", value: "Laser" },
+        { label: "Availability of Fax", value: "NA" },
+        { label: "Page Size", value: "A4/Legal" },
+        { label: "Scan Area", value: "A4/Legal" },
+        { label: "No. Of Paper Tray", value: "1" },
+        { label: "Warranty", value: "1 Year (Add on Options Available)" },
+        { label: "USB Direct Printer", value: "NA" },
+        { label: "OS", value: "MAC (IOS)" },
+        { label: "Reduction Environment Feature", value: "Yes" },
       ],
     },
     {
@@ -247,27 +256,36 @@ const PrinterSpecs = () => {
         { label: "Function (Print/Copy/Scan)", value: "Print/Copy/Scan" },
         { label: "Duplex Printing", value: "Yes" },
         { label: "Mono", value: "Yes" },
-        { label: "Colour", value: "No" },
+        { label: "Colour", value: "NA" },
         { label: "Composite /Separate toner drum", value: "Separate toner drum" },
-        { label: "Print Speed ppm (A4)", value: "33" },
-        { label: "First Print Out Time", value: "<8.2s" },
+        { label: "Print Speed ppm (A4)", value: "35" },
+        { label: "First Print Out Time", value: "<82s" },
         { label: "Processor Speed (MHz)", value: "525" },
         { label: "Memory (MB)", value: "256" },
         { label: "USB 2.0 / High-Speed USB", value: "Yes" },
         { label: "Wi-Fi", value: "Yes" },
         { label: "NW/LAN", value: "Yes" },
-        { label: "BT", value: "No" },
+        { label: "BT", value: "NA" },
         { label: "Mobile Printing", value: "Yes" },
-        { label: "NFC", value: "No" },
+        { label: "NFC", value: "NA" },
         { label: "ADF/DADF", value: "ADF" },
-        { label: "Yield per toner", value: "12000" },
+        { label: "Yield per toner", value: "NA" },
         { label: "Total Main Paper Tray Combined Capacity (Number) at 75 GSM", value: "250" },
         { label: "Bypass Tray Facility", value: "Yes" },
         { label: "Bypass Tray Capacity at 75 GSM", value: "1" },
         { label: "Duty Cycle (Number of Prints/Month)", value: "60000" },
-        { label: "Feeder Capacity (Number of Sheets) (For Scanning and Copying)", value: "50" },
-        { label: "Maximum Number of Prints covered under Product warrantY", value: "420000" },
+        { label: "Feeder Capacity (Number of Sheets) (For Scanning and Copying)", value: "50 Pages" },
+        { label: "Maximum Number of Prints covered under Product warrantY", value: "NA" },
         { label: "A4 Scan Speed - Colour (Image Per Minute) @ 200 x 200 dpi", value: "24" },
+        { label: "Printer Technology", value: "Laser" },
+        { label: "Availability of Fax", value: "NA" },
+        { label: "Page Size", value: "A4/Legal" },
+        { label: "Scan Area", value: "A4/Legal" },
+        { label: "No. Of Paper Tray", value: "1" },
+        { label: "Warranty", value: "1 Year (Add on Options Available)" },
+        { label: "USB Direct Printer", value: "NA" },
+        { label: "OS", value: "MAC (IOS)" },
+        { label: "Reduction Environment Feature", value: "Yes" },
       ],
     },
     {
@@ -284,27 +302,36 @@ const PrinterSpecs = () => {
         { label: "Function (Print/Copy/Scan)", value: "Print/Copy/Scan" },
         { label: "Duplex Printing", value: "Yes" },
         { label: "Mono", value: "Yes" },
-        { label: "Colour", value: "No" },
+        { label: "Colour", value: "NA" },
         { label: "Composite /Separate toner drum", value: "Separate toner drum" },
-        { label: "Print Speed ppm (A4)", value: "40" },
-        { label: "First Print Out Time", value: "<6.9s" },
+        { label: "Print Speed ppm (A4)", value: "42" },
+        { label: "First Print Out Time", value: "<69s" },
         { label: "Processor Speed (MHz)", value: "1.2 GHz" },
         { label: "Memory (MB)", value: "512" },
         { label: "USB 2.0 / High-Speed USB", value: "Yes" },
         { label: "Wi-Fi", value: "Yes" },
         { label: "NW/LAN", value: "Yes" },
-        { label: "BT", value: "No" },
+        { label: "BT", value: "NA" },
         { label: "Mobile Printing", value: "Yes" },
         { label: "NFC", value: "Yes" },
-        { label: "ADF/DADF", value: "SPDF" },
-        { label: "Yield per toner", value: "30000" },
+        { label: "ADF/DADF", value: "SPDF/ADF/DADF" },
+        { label: "Yield per toner", value: "NA" },
         { label: "Total Main Paper Tray Combined Capacity (Number) at 75 GSM", value: "250" },
         { label: "Bypass Tray Facility", value: "Yes" },
         { label: "Bypass Tray Capacity at 75 GSM", value: "60" },
         { label: "Duty Cycle (Number of Prints/Month)", value: "100000" },
-        { label: "Feeder Capacity (Number of Sheets) (For Scanning and Copying)", value: "50" },
-        { label: "Maximum Number of Prints covered under Product warrantY", value: "840000" },
+        { label: "Feeder Capacity (Number of Sheets) (For Scanning and Copying)", value: "50 Pages" },
+        { label: "Maximum Number of Prints covered under Product warrantY", value: "NA" },
         { label: "A4 Scan Speed - Colour (Image Per Minute) @ 200 x 200 dpi", value: "24" },
+        { label: "Printer Technology", value: "Laser" },
+        { label: "Availability of Fax", value: "NA" },
+        { label: "Page Size", value: "A4/Legal" },
+        { label: "Scan Area", value: "A4/Legal" },
+        { label: "No. Of Paper Tray", value: "2 Additional Tray Can be Added" },
+        { label: "Warranty", value: "1 Year (Add on Options Available)" },
+        { label: "USB Direct Printer", value: "Yes" },
+        { label: "OS", value: "MAC /window/Linux" },
+        { label: "Reduction Environment Feature", value: "Yes" },
       ],
     },
     {
@@ -321,27 +348,82 @@ const PrinterSpecs = () => {
         { label: "Function (Print/Copy/Scan)", value: "Print/Copy/Scan" },
         { label: "Duplex Printing", value: "Yes" },
         { label: "Mono", value: "Yes" },
-        { label: "Colour", value: "No" },
+        { label: "Colour", value: "NA" },
         { label: "Composite /Separate toner drum", value: "Separate toner drum" },
         { label: "Print Speed ppm (A4)", value: "42" },
-        { label: "First Print Out Time", value: "<5.9s" },
+        { label: "First Print Out Time", value: "<59s" },
         { label: "Processor Speed (MHz)", value: "1.2 GHz" },
         { label: "Memory (MB)", value: "1 GB" },
         { label: "USB 2.0 / High-Speed USB", value: "Yes" },
         { label: "Wi-Fi", value: "Yes" },
         { label: "NW/LAN", value: "Yes" },
-        { label: "BT", value: "No" },
+        { label: "BT", value: "NA" },
         { label: "Mobile Printing", value: "Yes" },
-        { label: "NFC", value: "Yes (except iOS)" },
-        { label: "ADF/DADF", value: "SPDF" },
-        { label: "Yield per toner", value: "30000" },
+        { label: "NFC", value: "Yes (excl. iOS)" },
+        { label: "ADF/DADF", value: "SPDF/ADF/DADF" },
+        { label: "Yield per toner", value: "NA" },
         { label: "Total Main Paper Tray Combined Capacity (Number) at 75 GSM", value: "250" },
         { label: "Bypass Tray Facility", value: "Yes" },
         { label: "Bypass Tray Capacity at 75 GSM", value: "60" },
         { label: "Duty Cycle (Number of Prints/Month)", value: "100000" },
-        { label: "Feeder Capacity (Number of Sheets) (For Scanning and Copying)", value: "50" },
-        { label: "Maximum Number of Prints covered under Product warrantY", value: "840000" },
+        { label: "Feeder Capacity (Number of Sheets) (For Scanning and Copying)", value: "50 Pages" },
+        { label: "Maximum Number of Prints covered under Product warrantY", value: "NA" },
         { label: "A4 Scan Speed - Colour (Image Per Minute) @ 200 x 200 dpi", value: "24" },
+        { label: "Printer Technology", value: "Laser" },
+        { label: "Availability of Fax", value: "NA" },
+        { label: "Page Size", value: "A4/Legal" },
+        { label: "Scan Area", value: "A4/Legal" },
+        { label: "No. Of Paper Tray", value: "2 Additional Tray Can be Added" },
+        { label: "Warranty", value: "1 Year (Add on Options Available)" },
+        { label: "USB Direct Printer", value: "Yes" },
+        { label: "OS", value: "MAC /window/Linux" },
+        { label: "Reduction Environment Feature", value: "Yes" },
+      ],
+    },
+    {
+      id: "OM271",
+      name: "OM271",
+      folderKey: "OM271",
+      model: "CM2100DW",
+      type: "Commercial Workgroup Colour MFP",
+      tag: "All-in-One Series",
+      color: true,
+      specs: [
+        { label: "Model", value: "CM2100DW" },
+        { label: "Acxxel", value: "OM271" },
+        { label: "Function (Print/Copy/Scan)", value: "Print/Copy/Scan" },
+        { label: "Duplex Printing", value: "Yes" },
+        { label: "Mono", value: "Yes" },
+        { label: "Colour", value: "Yes" },
+        { label: "Composite /Separate toner drum", value: "Composite Cartridge" },
+        { label: "Print Speed ppm (A4)", value: "42" },
+        { label: "First Print Out Time", value: "12s" },
+        { label: "Processor Speed (MHz)", value: "500" },
+        { label: "Memory (MB)", value: "512" },
+        { label: "USB 2.0 / High-Speed USB", value: "Yes" },
+        { label: "Wi-Fi", value: "Yes" },
+        { label: "NW/LAN", value: "Yes" },
+        { label: "BT", value: "NA" },
+        { label: "Mobile Printing", value: "Yes" },
+        { label: "NFC", value: "NA" },
+        { label: "ADF/DADF", value: "NA" },
+        { label: "Yield per toner", value: "NA" },
+        { label: "Total Main Paper Tray Combined Capacity (Number) at 75 GSM", value: "250" },
+        { label: "Bypass Tray Facility", value: "Yes" },
+        { label: "Bypass Tray Capacity at 75 GSM", value: "1" },
+        { label: "Duty Cycle (Number of Prints/Month)", value: "30000" },
+        { label: "Feeder Capacity (Number of Sheets) (For Scanning and Copying)", value: "NA" },
+        { label: "Maximum Number of Prints covered under Product warrantY", value: "NA" },
+        { label: "A4 Scan Speed - Colour (Image Per Minute) @ 200 x 200 dpi", value: "NA" },
+        { label: "Printer Technology", value: "Laser" },
+        { label: "Availability of Fax", value: "NA" },
+        { label: "Page Size", value: "A4/Legal" },
+        { label: "Scan Area", value: "A4/Legal" },
+        { label: "No. Of Paper Tray", value: "1" },
+        { label: "Warranty", value: "1 Year (Add on Options Available)" },
+        { label: "USB Direct Printer", value: "NA" },
+        { label: "OS", value: "MAC (IOS)" },
+        { label: "Reduction Environment Feature", value: "Yes" },
       ],
     },
   ];
@@ -355,7 +437,6 @@ const PrinterSpecs = () => {
   const currentModel = modelsData[currentIndex];
   const isLastPage = currentIndex === modelsData.length;
 
-  // Group models by their tag/series for the tab header display
   const seriesGroups = modelsData.reduce((acc, model, idx) => {
     const tag = model.tag;
     if (!acc[tag]) {
@@ -405,16 +486,58 @@ const PrinterSpecs = () => {
   const renderValueBadge = (value) => {
     if (!value || value === "—") return <span className="text-slate-400">—</span>;
     if (value === "Yes" || value === "YES") return <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-800 text-[10px] font-bold tracking-wide">YES</span>;
-    if (value === "No" || value === "NO") return <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-rose-100 text-rose-800 text-[10px] font-bold tracking-wide">NO</span>;
+    if (value === "NA") return <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-slate-100 text-slate-500 text-[10px] font-bold tracking-wide">NA</span>;
     if (value.includes("Colour")) return <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-blue-100 text-blue-800 text-[10px] font-bold tracking-wide">COLOUR</span>;
     if (value.includes("Mono")) return <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-slate-200 text-slate-800 text-[10px] font-bold tracking-wide">MONO</span>;
     return <span className="font-medium text-slate-900">{value}</span>;
   };
 
+  const summaryColumns = [
+    { key: "Acxxel", header: <span>Acxxel</span> },
+    { key: "Function (Print/Copy/Scan)", header: <span>Function<br/>(Print/Copy/Scan)</span> },
+    { key: "Duplex Printing", header: <span>Duplex<br/>Printing</span> },
+    { key: "Mono", header: <span>Mono</span> },
+    { key: "Colour", header: <span>Colour</span> },
+    { key: "Composite /Separate toner drum", header: <span>Composite/<br/>Separate Toner</span> },
+    { key: "Print Speed ppm (A4)", header: <span>Print Speed<br/>ppm (A4)</span> },
+    { key: "First Print Out Time", header: <span>First Print<br/>Out Time</span> },
+    { key: "Processor Speed (MHz)", header: <span>Processor<br/>Speed (MHz)</span> },
+    { key: "Memory (MB)", header: <span>Memory<br/>(MB)</span> },
+    { key: "USB 2.0 / High-Speed USB", header: <span>USB</span> },
+    { key: "Wi-Fi", header: <span>Wi-Fi</span> },
+    { key: "NW/LAN", header: <span>Network</span> },
+    { key: "Mobile Printing", header: <span>Mobile<br/>Printing</span> },
+    { key: "NFC", header: <span>NFC</span> },
+    { key: "ADF/DADF", header: <span>Auto Duplex</span> },
+    { key: "Yield per toner", header: <span>Yield Per<br/>Toner</span> },
+    { key: "Total Main Paper Tray Combined Capacity (Number) at 75 GSM", header: <span>Paper Tray<br/>(pages)</span> },
+    { key: "Bypass Tray Facility", header: <span>Bypass Tray<br/>Facility</span> },
+    { key: "Bypass Tray Capacity at 75 GSM", header: <span>Bypass Tray<br/>Capacity</span> },
+    { key: "Duty Cycle (Number of Prints/Month)", header: <span>Duty Cycle<br/>(Prints/Month)</span> },
+    { key: "Feeder Capacity (Number of Sheets) (For Scanning and Copying)", header: <span>Feeder Cap.<br/>(Sheets)</span> },
+    { key: "Maximum Number of Prints covered under Product warrantY", header: <span>Max Prints<br/>(Warranty)</span> },
+    { key: "A4 Scan Speed - Colour (Image Per Minute) @ 200 x 200 dpi", header: <span>A4 Scan Speed<br/>Colour (IPM)</span> },
+    { key: "Printer Technology", header: <span>Printer<br/>Technology</span> },
+    { key: "Availability of Fax", header: <span>Fax<br/>Available</span> },
+    { key: "Page Size", header: <span>Page<br/>Size</span> },
+    { key: "Scan Area", header: <span>Scan<br/>Area</span> },
+    { key: "No. Of Paper Tray", header: <span>No. Of<br/>Paper Tray</span> },
+    { key: "Warranty", header: <span>Warranty</span> },
+    { key: "USB Direct Printer", header: <span>USB Direct<br/>Printer</span> },
+    { key: "OS", header: <span>OS</span> },
+    { key: "Reduction Environment Feature", header: <span>Reduction Env.<br/>Feature</span> },
+  ];
+
+  const badgeCols = new Set([
+    "Duplex Printing","Mono","Colour","USB 2.0 / High-Speed USB",
+    "Wi-Fi","NW/LAN","Mobile Printing","Bypass Tray Facility",
+    "USB Direct Printer","Availability of Fax","Reduction Environment Feature",
+  ]);
+
   return (
     <section className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 px-4 py-8 font-sans">
       <div className="mx-auto max-w-7xl">
-        
+
         {/* Header */}
         <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between border-b border-slate-200 pb-4">
           <button
@@ -429,8 +552,8 @@ const PrinterSpecs = () => {
             <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-red-600">
               Laps N Tabs Technology Pvt. Ltd.
             </h1>
-            <p className="mt-1 text-xs font-bold uppercase tracking-[0.2em] text-[#F26522]">
-              ACXXEL Printer Catalogue
+            <p className="mt-1 text-xs font-bold tracking-[0.2em] text-[#F26522]">
+              acxxel Printer / MFA Catalogue
             </p>
           </div>
         </div>
@@ -481,7 +604,7 @@ const PrinterSpecs = () => {
         {!isLastPage ? (
           <div key={currentIndex} className="animate-fade-in overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-2xl shadow-slate-200/50">
             <div className="grid grid-cols-1 lg:grid-cols-12 items-start">
-              
+
               {/* LEFT: Image Panel (5 cols) */}
               <div className="border-b border-slate-200 bg-gradient-to-b from-slate-50 to-white p-6 lg:border-b-0 lg:border-r lg:col-span-5 flex flex-col">
                 <div className="flex items-center justify-between mb-5">
@@ -633,10 +756,7 @@ const PrinterSpecs = () => {
           <div key="summary" className="animate-fade-in rounded-3xl border border-slate-200 bg-white p-6 sm:p-8 shadow-2xl shadow-slate-200/50">
             <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
               <div>
-                <h2 className="text-2xl sm:text-3xl font-black text-[#F26522]">ACXXEL Model Summary Sheet</h2>
-                <p className="mt-2 text-sm font-medium text-slate-500">
-                  Consolidated comparison of all printer models - All 26 specifications exactly as per official sheet.
-                </p>
+                <h2 className="text-2xl sm:text-3xl font-black text-[#F26522]">Printer/MFP Datasheet</h2>
               </div>
               <span className="rounded-full bg-slate-900 px-5 py-2 text-xs font-black uppercase tracking-widest text-white shadow-md">
                 End of Catalogue
@@ -644,35 +764,18 @@ const PrinterSpecs = () => {
             </div>
 
             <div className="overflow-x-auto rounded-xl border border-slate-200">
-              <table className="w-full min-w-[2800px] border-collapse text-[10px] lg:text-xs">
+              <table className="w-full border-collapse text-[10px] lg:text-xs" style={{ minWidth: "3200px" }}>
                 <thead>
                   <tr className="bg-slate-900 text-white">
-                    <th className="border border-slate-700 p-3 text-left font-bold uppercase tracking-wide whitespace-nowrap sticky top-0 bg-slate-900 z-10">Model</th>
-                    <th className="border border-slate-700 p-3 text-left font-bold uppercase tracking-wide whitespace-nowrap sticky top-0 bg-slate-900 z-10">Acxxel</th>
-                    <th className="border border-slate-700 p-3 text-left font-bold uppercase tracking-wide whitespace-nowrap sticky top-0 bg-slate-900 z-10">Function (Print/Copy/Scan)</th>
-                    <th className="border border-slate-700 p-3 text-left font-bold uppercase tracking-wide whitespace-nowrap sticky top-0 bg-slate-900 z-10">Duplex Printing</th>
-                    <th className="border border-slate-700 p-3 text-left font-bold uppercase tracking-wide whitespace-nowrap sticky top-0 bg-slate-900 z-10">Mono</th>
-                    <th className="border border-slate-700 p-3 text-left font-bold uppercase tracking-wide whitespace-nowrap sticky top-0 bg-slate-900 z-10">Colour</th>
-                    <th className="border border-slate-700 p-3 text-left font-bold uppercase tracking-wide whitespace-nowrap sticky top-0 bg-slate-900 z-10">Composite /Separate toner drum</th>
-                    <th className="border border-slate-700 p-3 text-left font-bold uppercase tracking-wide whitespace-nowrap sticky top-0 bg-slate-900 z-10">Print Speed ppm (A4)</th>
-                    <th className="border border-slate-700 p-3 text-left font-bold uppercase tracking-wide whitespace-nowrap sticky top-0 bg-slate-900 z-10">First Print Out Time</th>
-                    <th className="border border-slate-700 p-3 text-left font-bold uppercase tracking-wide whitespace-nowrap sticky top-0 bg-slate-900 z-10">Processor Speed (MHz)</th>
-                    <th className="border border-slate-700 p-3 text-left font-bold uppercase tracking-wide whitespace-nowrap sticky top-0 bg-slate-900 z-10">Memory (MB)</th>
-                    <th className="border border-slate-700 p-3 text-left font-bold uppercase tracking-wide whitespace-nowrap sticky top-0 bg-slate-900 z-10">USB 2.0 / High-Speed USB</th>
-                    <th className="border border-slate-700 p-3 text-left font-bold uppercase tracking-wide whitespace-nowrap sticky top-0 bg-slate-900 z-10">Wi-Fi</th>
-                    <th className="border border-slate-700 p-3 text-left font-bold uppercase tracking-wide whitespace-nowrap sticky top-0 bg-slate-900 z-10">NW/LAN</th>
-                    <th className="border border-slate-700 p-3 text-left font-bold uppercase tracking-wide whitespace-nowrap sticky top-0 bg-slate-900 z-10">BT</th>
-                    <th className="border border-slate-700 p-3 text-left font-bold uppercase tracking-wide whitespace-nowrap sticky top-0 bg-slate-900 z-10">Mobile Printing</th>
-                    <th className="border border-slate-700 p-3 text-left font-bold uppercase tracking-wide whitespace-nowrap sticky top-0 bg-slate-900 z-10">NFC</th>
-                    <th className="border border-slate-700 p-3 text-left font-bold uppercase tracking-wide whitespace-nowrap sticky top-0 bg-slate-900 z-10">ADF/DADF</th>
-                    <th className="border border-slate-700 p-3 text-left font-bold uppercase tracking-wide whitespace-nowrap sticky top-0 bg-slate-900 z-10">Yield per toner</th>
-                    <th className="border border-slate-700 p-3 text-left font-bold uppercase tracking-wide whitespace-nowrap sticky top-0 bg-slate-900 z-10">Total Main Paper Tray Combined Capacity (Number) at 75 GSM</th>
-                    <th className="border border-slate-700 p-3 text-left font-bold uppercase tracking-wide whitespace-nowrap sticky top-0 bg-slate-900 z-10">Bypass Tray Facility</th>
-                    <th className="border border-slate-700 p-3 text-left font-bold uppercase tracking-wide whitespace-nowrap sticky top-0 bg-slate-900 z-10">Bypass Tray Capacity at 75 GSM</th>
-                    <th className="border border-slate-700 p-3 text-left font-bold uppercase tracking-wide whitespace-nowrap sticky top-0 bg-slate-900 z-10">Duty Cycle (Number of Prints/Month)</th>
-                    <th className="border border-slate-700 p-3 text-left font-bold uppercase tracking-wide whitespace-nowrap sticky top-0 bg-slate-900 z-10">Feeder Capacity (Number of Sheets) (For Scanning and Copying)</th>
-                    <th className="border border-slate-700 p-3 text-left font-bold uppercase tracking-wide whitespace-nowrap sticky top-0 bg-slate-900 z-10">Maximum Number of Prints covered under Product warrantY</th>
-                    <th className="border border-slate-700 p-3 text-left font-bold uppercase tracking-wide whitespace-nowrap sticky top-0 bg-slate-900 z-10">A4 Scan Speed - Colour (Image Per Minute) @ 200 x 200 dpi</th>
+                    {summaryColumns.map((col, i) => (
+                      <th
+                        key={i}
+                        className="border border-slate-700 p-2 text-left font-bold uppercase tracking-wide align-top sticky top-0 bg-slate-900 z-10"
+                        style={{ whiteSpace: "normal", minWidth: "90px" }}
+                      >
+                        {col.header}
+                      </th>
+                    ))}
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-100">
@@ -680,32 +783,20 @@ const PrinterSpecs = () => {
                     const g = (label) => model.specs.find((s) => s.label === label)?.value ?? "—";
                     return (
                       <tr key={model.id} className={`hover:bg-slate-50 transition-colors ${idx % 2 === 0 ? "bg-white" : "bg-slate-50/50"}`}>
-                        <td className="border border-slate-200 p-2 font-semibold text-slate-800 whitespace-nowrap">{model.model}</td>
-                        <td className="border border-slate-200 p-2 font-black text-[#F26522] whitespace-nowrap">{model.name}</td>
-                        <td className="border border-slate-200 p-2 whitespace-nowrap">{g("Function (Print/Copy/Scan)")}</td>
-                        <td className="border border-slate-200 p-2 whitespace-nowrap">{renderValueBadge(g("Duplex Printing"))}</td>
-                        <td className="border border-slate-200 p-2 whitespace-nowrap">{renderValueBadge(g("Mono"))}</td>
-                        <td className="border border-slate-200 p-2 whitespace-nowrap">{renderValueBadge(g("Colour"))}</td>
-                        <td className="border border-slate-200 p-2 whitespace-nowrap">{g("Composite /Separate toner drum")}</td>
-                        <td className="border border-slate-200 p-2 font-bold text-slate-800 whitespace-nowrap">{g("Print Speed ppm (A4)")}</td>
-                        <td className="border border-slate-200 p-2 whitespace-nowrap">{g("First Print Out Time")}</td>
-                        <td className="border border-slate-200 p-2 whitespace-nowrap">{g("Processor Speed (MHz)")}</td>
-                        <td className="border border-slate-200 p-2 whitespace-nowrap">{g("Memory (MB)")}</td>
-                        <td className="border border-slate-200 p-2 whitespace-nowrap">{renderValueBadge(g("USB 2.0 / High-Speed USB"))}</td>
-                        <td className="border border-slate-200 p-2 whitespace-nowrap">{renderValueBadge(g("Wi-Fi"))}</td>
-                        <td className="border border-slate-200 p-2 whitespace-nowrap">{renderValueBadge(g("NW/LAN"))}</td>
-                        <td className="border border-slate-200 p-2 whitespace-nowrap">{renderValueBadge(g("BT"))}</td>
-                        <td className="border border-slate-200 p-2 whitespace-nowrap">{renderValueBadge(g("Mobile Printing"))}</td>
-                        <td className="border border-slate-200 p-2 whitespace-nowrap">{g("NFC")}</td>
-                        <td className="border border-slate-200 p-2 whitespace-nowrap">{g("ADF/DADF")}</td>
-                        <td className="border border-slate-200 p-2 font-medium whitespace-nowrap">{g("Yield per toner")}</td>
-                        <td className="border border-slate-200 p-2 font-medium whitespace-nowrap">{g("Total Main Paper Tray Combined Capacity (Number) at 75 GSM")}</td>
-                        <td className="border border-slate-200 p-2 whitespace-nowrap">{renderValueBadge(g("Bypass Tray Facility"))}</td>
-                        <td className="border border-slate-200 p-2 whitespace-nowrap">{g("Bypass Tray Capacity at 75 GSM")}</td>
-                        <td className="border border-slate-200 p-2 font-medium whitespace-nowrap">{g("Duty Cycle (Number of Prints/Month)")}</td>
-                        <td className="border border-slate-200 p-2 whitespace-nowrap">{g("Feeder Capacity (Number of Sheets) (For Scanning and Copying)")}</td>
-                        <td className="border border-slate-200 p-2 font-medium whitespace-nowrap">{g("Maximum Number of Prints covered under Product warrantY")}</td>
-                        <td className="border border-slate-200 p-2 whitespace-nowrap">{g("A4 Scan Speed - Colour (Image Per Minute) @ 200 x 200 dpi")}</td>
+                        {summaryColumns.map((col, ci) => {
+                          const val = g(col.key);
+                          const isAcxxelCol = col.key === "Acxxel";
+                          return (
+                            <td
+                              key={ci}
+                              className={`border border-slate-200 p-2 whitespace-nowrap ${
+                                isAcxxelCol ? "font-black text-[#F26522]" : ""
+                              }`}
+                            >
+                              {badgeCols.has(col.key) ? renderValueBadge(val) : <span className="font-medium text-slate-800">{val}</span>}
+                            </td>
+                          );
+                        })}
                       </tr>
                     );
                   })}
