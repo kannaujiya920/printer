@@ -15,7 +15,7 @@ const PrinterSpecs = () => {
       id: "OM035",
       name: "OM035",
       folderKey: "OM035",
-     
+ 
       type: "Duplex Mono Laser Printer",
       tag: "Printer Series",
       color: false,
@@ -47,7 +47,7 @@ const PrinterSpecs = () => {
         { label: "Printer Technology", value: "Laser" },
         { label: "Fax Available", value: "NA" },
         { label: "Page Size", value: "A4/Legal" },
-        { label: "Scan Area", value: "NA" },
+        { label: "Scan Area", value: "A4" },
         { label: "No. Of Paper Tray", value: "1" },
         { label: "Warranty", value: "1 Year (Add on Options Available)" },
         { label: "USB Direct Printer", value: "NA" },
@@ -60,7 +60,7 @@ const PrinterSpecs = () => {
       id: "OM050",
       name: "OM050",
       folderKey: "OM050",
-  
+
       type: "Professional Colour Laser Printer",
       tag: "Printer Series",
       color: true,
@@ -92,7 +92,7 @@ const PrinterSpecs = () => {
         { label: "Printer Technology", value: "Laser" },
         { label: "Fax Available", value: "NA" },
         { label: "Page Size", value: "A4/Legal" },
-        { label: "Scan Area", value: "NA" },
+        { label: "Scan Area", value: "A4" },
         { label: "No. Of Paper Tray", value: "1" },
         { label: "Warranty", value: "1 Year (Add on Options Available)" },
         { label: "USB Direct Printer", value: "NA" },
@@ -105,7 +105,7 @@ const PrinterSpecs = () => {
       id: "OM052",
       name: "OM052",
       folderKey: "OM052",
-      model: "P2210",
+ 
       type: "Compact Mono Laser Printer",
       tag: "Printer Series",
       color: false,
@@ -137,7 +137,7 @@ const PrinterSpecs = () => {
         { label: "Printer Technology", value: "Laser" },
         { label: "Fax Available", value: "NA" },
         { label: "Page Size", value: "A4/Legal" },
-        { label: "Scan Area", value: "NA" },
+        { label: "Scan Area", value: "A4" },
         { label: "No. Of Paper Tray", value: "1" },
         { label: "Warranty", value: "1 Year (Add on Options Available)" },
         { label: "USB Direct Printer", value: "NA" },
@@ -147,15 +147,15 @@ const PrinterSpecs = () => {
       ],
     },
     {
-      id: "OM52",
-      name: "OM52",
-      folderKey: "OM52",
+      id: "OM010",
+      name: "OM010",
+      folderKey: "OM010",
      
       type: "Professional All-in-One Laser Printer",
       tag: "All-in-One Series",
       color: false,
       specs: [
-        { label: "Acxxel", value: "OM52" },
+        { label: "Acxxel", value: "OM010" },
         { label: "Function", value: "Print/Copy/Scan" },
         { label: "Duplex Printing", value: "NA" },
         { label: "Mono", value: "Yes" },
@@ -195,7 +195,7 @@ const PrinterSpecs = () => {
       id: "OM221",
       name: "OM221",
       folderKey: "OM221",
-      
+      model: "M6518",
       type: "Professional All-in-One Laser Printer",
       tag: "All-in-One Series",
       color: false,
@@ -211,7 +211,7 @@ const PrinterSpecs = () => {
         { label: "Processor Speed (MHz)", value: "600" },
         { label: "Memory (MB)", value: "128" },
         { label: "USB", value: "Yes" },
-        { label: "Wi-Fi", value: "Yes" },
+        { label: "Wi-Fi", value: "NA" },
         { label: "Network", value: "Yes" },
         { label: "Mobile Printing", value: "Yes" },
         { label: "NFC", value: "NA" },
@@ -240,7 +240,7 @@ const PrinterSpecs = () => {
       id: "OM235",
       name: "OM235",
       folderKey: "OM235",
-      model: "M7108DW",
+     
       type: "ADF Productivity Multifunction Printer",
       tag: "All-in-One Series",
       color: false,
@@ -285,7 +285,7 @@ const PrinterSpecs = () => {
       id: "OM240",
       name: "OM240",
       folderKey: "OM240",
-     
+  
       type: "Advanced Office Multifunction Printer",
       tag: "All-in-One Series",
       color: false,
@@ -330,7 +330,7 @@ const PrinterSpecs = () => {
       id: "OM249",
       name: "OM249",
       folderKey: "OM249",
-      
+  
       type: "Smart Touch Enterprise MFP",
       tag: "All-in-One Series",
       color: false,
@@ -375,7 +375,7 @@ const PrinterSpecs = () => {
       id: "OM271",
       name: "OM271",
       folderKey: "OM271",
-     
+      
       type: "Commercial Workgroup Colour MFP",
       tag: "All-in-One Series",
       color: true,
@@ -395,13 +395,13 @@ const PrinterSpecs = () => {
         { label: "Network", value: "Yes" },
         { label: "Mobile Printing", value: "Yes" },
         { label: "NFC", value: "NA" },
-        { label: "Auto Duplex", value: "No" },
+        { label: "Auto Duplex", value: "	ADF" },
         { label: "Yield Per Toner", value: "3,000" },
         { label: "Paper Tray (pages)", value: "250" },
         { label: "Bypass Tray Facility", value: "Yes" },
         { label: "Bypass Tray Capacity", value: "1" },
         { label: "Duty Cycle (Prints/Month)", value: "30,000" },
-        { label: "Feeder Cap. (Sheets)", value: "NA" },
+        { label: "Feeder Cap. (Sheets)", value: "50 Pages" },
         { label: "Max Prints (Warranty)", value: "300,000" },
         { label: "A4 Scan Speed Colour (IPM)", value: "NA" },
         { label: "Printer Technology", value: "Laser" },
@@ -580,9 +580,14 @@ const PrinterSpecs = () => {
 
               <div className="border-b border-slate-200 bg-gradient-to-b from-slate-50 to-white p-6 lg:border-b-0 lg:border-r lg:col-span-5 flex flex-col">
                 <div className="flex items-center justify-between mb-5">
-                  <span className="rounded-full bg-slate-900 px-4 py-1.5 text-[10px] font-black uppercase tracking-widest text-white shadow-md">
-                    {currentModel.tag}
-                  </span>
+                  <div className="flex flex-col gap-1">
+                    <span className="rounded-full bg-slate-900 px-4 py-1.5 text-[10px] font-black uppercase tracking-widest text-white shadow-md">
+                      {currentModel.tag}
+                    </span>
+                    <span className="text-3xl font-black tracking-tight text-[#F26522] pl-1">
+                      {currentModel.name}
+                    </span>
+                  </div>
                   <span className="text-xs font-bold uppercase tracking-widest text-slate-400 bg-slate-100 px-2 py-1 rounded-md">
                     {currentIndex + 1} / {modelsData.length}
                   </span>
@@ -640,7 +645,6 @@ const PrinterSpecs = () => {
                 </div>
 
                 <div className="text-center">
-                  <h2 className="text-3xl font-black tracking-tight text-[#F26522]">{currentModel.name}</h2>
                   <p className="mt-1 text-sm font-semibold text-slate-600">{currentModel.model}</p>
                   <p className="mt-2 text-base font-bold text-slate-800">{currentModel.type}</p>
                   {currentModel.color && (
@@ -653,13 +657,10 @@ const PrinterSpecs = () => {
               </div>
 
               <div className="flex flex-col p-6 lg:p-8 lg:col-span-7">
-                <div className="mb-6 flex items-center justify-between border-b-2 border-[#F26522] pb-3">
+                <div className="mb-6 flex items-center border-b-2 border-[#F26522] pb-3">
                   <h3 className="text-lg sm:text-xl font-black uppercase tracking-tight text-slate-900">
                     Full Specifications
                   </h3>
-                  <span className="text-sm font-black text-[#F26522] bg-[#F26522]/10 px-3 py-1 rounded-md">
-                    {currentModel.name}
-                  </span>
                 </div>
 
                 <div className="pr-1">
@@ -668,30 +669,46 @@ const PrinterSpecs = () => {
                       {(() => {
                         const specs = currentModel.specs;
                         const rows = [];
-                        for (let i = 0; i < specs.length; i += 2) {
-                          const left = specs[i];
-                          const right = specs[i + 1];
+                        for (let i = 0; i < specs.length; i += 3) {
+                          const col1 = specs[i];
+                          const col2 = specs[i + 1];
+                          const col3 = specs[i + 2];
                           rows.push(
                             <tr key={i} className="hover:bg-slate-50/80 transition-colors">
-                              <td className="py-3 pr-4 text-slate-500 font-semibold w-[28%] align-top leading-snug">
-                                {left.label}
+                              <td className="py-2 pr-2 text-slate-500 font-semibold w-[18%] align-top leading-snug text-[13px]">
+                                {col1.label}
                               </td>
-                              <td className="py-3 pr-4 font-bold text-slate-800 w-[22%] align-top">
-                                {renderValueBadge(left.value)}
+                              <td className="py-2 pr-3 font-bold text-slate-800 w-[15%] align-top">
+                                {renderValueBadge(col1.value)}
                               </td>
-                              {right ? (
+                              {col2 ? (
                                 <>
-                                  <td className="py-3 pr-4 text-slate-500 font-semibold w-[28%] align-top leading-snug border-l border-slate-100 pl-4">
-                                    {right.label}
+                                  <td className="py-2 pr-2 text-slate-500 font-semibold w-[18%] align-top leading-snug border-l border-slate-100 pl-3 text-[13px]">
+                                    {col2.label}
                                   </td>
-                                  <td className="py-3 font-bold text-slate-800 w-[22%] align-top">
-                                    {renderValueBadge(right.value)}
+                                  <td className="py-2 pr-3 font-bold text-slate-800 w-[15%] align-top">
+                                    {renderValueBadge(col2.value)}
                                   </td>
                                 </>
                               ) : (
                                 <>
-                                  <td className="border-l border-slate-100 pl-4"></td>
-                                  <td></td>
+                                  <td className="border-l border-slate-100 pl-3 w-[18%]"></td>
+                                  <td className="w-[15%]"></td>
+                                </>
+                              )}
+                              {col3 ? (
+                                <>
+                                  <td className="py-2 pr-2 text-slate-500 font-semibold w-[18%] align-top leading-snug border-l border-slate-100 pl-3 text-[13px]">
+                                    {col3.label}
+                                  </td>
+                                  <td className="py-2 font-bold text-slate-800 w-[16%] align-top">
+                                    {renderValueBadge(col3.value)}
+                                  </td>
+                                </>
+                              ) : (
+                                <>
+                                  <td className="border-l border-slate-100 pl-3 w-[18%]"></td>
+                                  <td className="w-[16%]"></td>
                                 </>
                               )}
                             </tr>
