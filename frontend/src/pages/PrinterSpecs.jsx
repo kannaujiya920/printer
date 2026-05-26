@@ -15,12 +15,11 @@ const PrinterSpecs = () => {
       id: "OM035",
       name: "OM035",
       folderKey: "OM035",
- 
       type: "Duplex Mono Laser Printer",
       tag: "Printer Series",
       color: false,
       specs: [
-        { label: "Acxxel", value: "OM035" },
+        { label: "acxxel", value: "OM035" },
         { label: "Function", value: "Print" },
         { label: "Duplex Printing", value: "Yes" },
         { label: "Mono", value: "Yes" },
@@ -60,12 +59,11 @@ const PrinterSpecs = () => {
       id: "OM050",
       name: "OM050",
       folderKey: "OM050",
-
       type: "Professional Colour Laser Printer",
       tag: "Printer Series",
       color: true,
       specs: [
-        { label: "Acxxel", value: "OM050" },
+        { label: "acxxel", value: "OM050" },
         { label: "Function", value: "Print" },
         { label: "Duplex Printing", value: "Yes" },
         { label: "Mono", value: "NA" },
@@ -105,12 +103,11 @@ const PrinterSpecs = () => {
       id: "OM052",
       name: "OM052",
       folderKey: "OM052",
- 
       type: "Compact Mono Laser Printer",
       tag: "Printer Series",
       color: false,
       specs: [
-        { label: "Acxxel", value: "OM052" },
+        { label: "acxxel", value: "OM052" },
         { label: "Function", value: "Print" },
         { label: "Duplex Printing", value: "NA" },
         { label: "Mono", value: "Yes" },
@@ -150,12 +147,11 @@ const PrinterSpecs = () => {
       id: "OM010",
       name: "OM010",
       folderKey: "OM010",
-     
       type: "Professional All-in-One Laser Printer",
       tag: "All-in-One Series",
       color: false,
       specs: [
-        { label: "Acxxel", value: "OM010" },
+        { label: "acxxel", value: "OM010" },
         { label: "Function", value: "Print/Copy/Scan" },
         { label: "Duplex Printing", value: "NA" },
         { label: "Mono", value: "Yes" },
@@ -195,12 +191,11 @@ const PrinterSpecs = () => {
       id: "OM221",
       name: "OM221",
       folderKey: "OM221",
-    
       type: "Professional All-in-One Laser Printer",
       tag: "All-in-One Series",
       color: false,
       specs: [
-        { label: "Acxxel", value: "OM221" },
+        { label: "acxxel", value: "OM221" },
         { label: "Function", value: "Print/Copy/Scan" },
         { label: "Duplex Printing", value: "NA" },
         { label: "Mono", value: "Yes" },
@@ -240,12 +235,11 @@ const PrinterSpecs = () => {
       id: "OM235",
       name: "OM235",
       folderKey: "OM235",
-     
       type: "ADF Productivity Multifunction Printer",
       tag: "All-in-One Series",
       color: false,
       specs: [
-        { label: "Acxxel", value: "OM235" },
+        { label: "acxxel", value: "OM235" },
         { label: "Function", value: "Print/Copy/Scan" },
         { label: "Duplex Printing", value: "Yes" },
         { label: "Mono", value: "Yes" },
@@ -285,12 +279,11 @@ const PrinterSpecs = () => {
       id: "OM240",
       name: "OM240",
       folderKey: "OM240",
-  
       type: "Advanced Office Multifunction Printer",
       tag: "All-in-One Series",
       color: false,
       specs: [
-        { label: "Acxxel", value: "OM240" },
+        { label: "acxxel", value: "OM240" },
         { label: "Function", value: "Print/Copy/Scan" },
         { label: "Duplex Printing", value: "Yes" },
         { label: "Mono", value: "Yes" },
@@ -330,12 +323,11 @@ const PrinterSpecs = () => {
       id: "OM249",
       name: "OM249",
       folderKey: "OM249",
-  
       type: "Smart Touch Enterprise MFP",
       tag: "All-in-One Series",
       color: false,
       specs: [
-        { label: "Acxxel", value: "OM249" },
+        { label: "acxxel", value: "OM249" },
         { label: "Function", value: "Print/Copy/Scan" },
         { label: "Duplex Printing", value: "Yes" },
         { label: "Mono", value: "Yes" },
@@ -375,12 +367,11 @@ const PrinterSpecs = () => {
       id: "OM271",
       name: "OM271",
       folderKey: "OM271",
-      
       type: "Commercial Workgroup Colour MFP",
       tag: "All-in-One Series",
       color: true,
       specs: [
-        { label: "Acxxel", value: "OM271" },
+        { label: "acxxel", value: "OM271" },
         { label: "Function", value: "Print/Copy/Scan" },
         { label: "Duplex Printing", value: "Yes" },
         { label: "Mono", value: "Yes" },
@@ -395,7 +386,7 @@ const PrinterSpecs = () => {
         { label: "Network", value: "Yes" },
         { label: "Mobile Printing", value: "Yes" },
         { label: "NFC", value: "NA" },
-        { label: "Auto Duplex", value: "	ADF" },
+        { label: "Auto Duplex", value: "ADF" },
         { label: "Yield Per Toner", value: "3,000" },
         { label: "Paper Tray (pages)", value: "250" },
         { label: "Bypass Tray Facility", value: "Yes" },
@@ -459,15 +450,15 @@ const PrinterSpecs = () => {
 
   const renderValueBadge = (value) => {
     if (!value || value === "—") return <span className="text-slate-400">—</span>;
-    if (value === "Yes" || value === "YES") return <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-800 text-[10px] font-bold tracking-wide">YES</span>;
-    if (value === "NA") return <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-slate-100 text-slate-500 text-[10px] font-bold tracking-wide">NA</span>;
-    if (value.includes("Colour")) return <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-blue-100 text-blue-800 text-[10px] font-bold tracking-wide">COLOUR</span>;
-    if (value.includes("Mono")) return <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-slate-200 text-slate-800 text-[10px] font-bold tracking-wide">MONO</span>;
+    if (value === "Yes" || value === "YES") return <span className="inline-flex items-center px-1.5 py-0 rounded bg-emerald-100 text-emerald-800 text-[9px] font-bold tracking-wide">YES</span>;
+    if (value === "NA") return <span className="inline-flex items-center px-1.5 py-0 rounded bg-slate-100 text-slate-500 text-[9px] font-bold tracking-wide">NA</span>;
+    if (value.includes("Colour")) return <span className="inline-flex items-center px-1.5 py-0 rounded bg-blue-100 text-blue-800 text-[9px] font-bold tracking-wide">COLOUR</span>;
+    if (value.includes("Mono")) return <span className="inline-flex items-center px-1.5 py-0 rounded bg-slate-200 text-slate-800 text-[9px] font-bold tracking-wide">MONO</span>;
     return <span className="font-medium text-slate-900">{value}</span>;
   };
 
   const summaryColumns = [
-    { key: "Acxxel", header: <span>Acxxel</span> },
+    { key: "acxxel", header: <span>Acxxel</span> },
     { key: "Function", header: <span>Function</span> },
     { key: "Duplex Printing", header: <span>Duplex<br/>Printing</span> },
     { key: "Mono", header: <span>Mono</span> },
@@ -513,7 +504,8 @@ const PrinterSpecs = () => {
     <section className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 px-4 py-8 font-sans">
       <div className="mx-auto max-w-7xl">
 
-        <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between border-b border-slate-200 pb-4">
+        {/* Header */}
+        <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between border-b border-slate-200 pb-4">
           <button
             type="button"
             onClick={() => navigate("/")}
@@ -532,7 +524,8 @@ const PrinterSpecs = () => {
           </div>
         </div>
 
-        <div className="mb-6 flex flex-wrap justify-center gap-2">
+        {/* Model Selector */}
+        <div className="mb-5 flex flex-wrap justify-center gap-2">
           {seriesGroups["Printer Series"]?.map(({ name, idx }) => (
             <button
               key={name}
@@ -578,10 +571,11 @@ const PrinterSpecs = () => {
           <div key={currentIndex} className="animate-fade-in overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-2xl shadow-slate-200/50">
             <div className="grid grid-cols-1 lg:grid-cols-12 items-start">
 
-              <div className="border-b border-slate-200 bg-gradient-to-b from-slate-50 to-white p-6 lg:border-b-0 lg:border-r lg:col-span-5 flex flex-col">
-                <div className="flex items-center justify-between mb-5">
+              {/* Left panel - image */}
+              <div className="border-b border-slate-200 bg-gradient-to-b from-slate-50 to-white p-5 lg:border-b-0 lg:border-r lg:col-span-5 flex flex-col">
+                <div className="flex items-center justify-between mb-4">
                   <div className="flex flex-col gap-1">
-                    <span className="rounded-full bg-slate-900 px-4 py-1.5 text-[10px] font-black uppercase tracking-widest text-white shadow-md">
+                    <span className="rounded-full bg-slate-900 px-4 py-1 text-[10px] font-black uppercase tracking-widest text-white shadow-md">
                       {currentModel.tag}
                     </span>
                     <span className="text-3xl font-black tracking-tight text-[#F26522] pl-1">
@@ -593,13 +587,13 @@ const PrinterSpecs = () => {
                   </span>
                 </div>
 
-                <div className="flex-1 flex items-center justify-center rounded-2xl border border-slate-200 bg-white p-8 shadow-inner mb-5 min-h-[300px] lg:min-h-0 relative overflow-hidden group">
+                <div className="flex-1 flex items-center justify-center rounded-2xl border border-slate-200 bg-white p-6 shadow-inner mb-4 min-h-[280px] lg:min-h-0 relative overflow-hidden group">
                   <div className="absolute inset-0 bg-gradient-to-br from-transparent to-slate-50/50 pointer-events-none"></div>
                   <img
                     key={`${currentModel.id}-${activeView}`}
                     src={getImagePath(currentModel.folderKey, activeView)}
                     alt={`${currentModel.name} ${activeView}`}
-                    className="max-h-[420px] max-w-full object-contain drop-shadow-2xl transition-transform duration-500 group-hover:scale-105 relative z-10"
+                    className="max-h-[380px] max-w-full object-contain drop-shadow-2xl transition-transform duration-500 group-hover:scale-105 relative z-10"
                     onError={(e) => {
                       e.currentTarget.style.display = "none";
                       e.currentTarget.nextElementSibling.style.display = "flex";
@@ -611,19 +605,19 @@ const PrinterSpecs = () => {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-3 gap-3 mb-6">
+                <div className="grid grid-cols-3 gap-2 mb-4">
                   {views.map((view) => (
                     <button
                       key={view.key}
                       type="button"
                       onClick={() => setActiveView(view.key)}
-                      className={`group flex flex-col items-center gap-2 rounded-xl border-2 p-2 transition-all duration-200 ${
+                      className={`group flex flex-col items-center gap-1.5 rounded-xl border-2 p-1.5 transition-all duration-200 ${
                         activeView === view.key
                           ? "border-[#F26522] bg-[#F26522]/10 shadow-md"
                           : "border-slate-100 bg-white hover:border-[#F26522]/60 hover:shadow-sm"
                       }`}
                     >
-                      <div className="w-full h-28 rounded-lg overflow-hidden bg-slate-50 flex items-center justify-center relative">
+                      <div className="w-full h-24 rounded-lg overflow-hidden bg-slate-50 flex items-center justify-center relative">
                         <img
                           src={getImagePath(currentModel.folderKey, view.key)}
                           alt={`${currentModel.name} ${view.label}`}
@@ -645,10 +639,10 @@ const PrinterSpecs = () => {
                 </div>
 
                 <div className="text-center">
-                  <p className="mt-1 text-sm font-semibold text-slate-600">{currentModel.model}</p>
-                  <p className="mt-2 text-base font-bold text-slate-800">{currentModel.type}</p>
+                  <p className="text-sm font-semibold text-slate-600">{currentModel.model}</p>
+                  <p className="mt-1 text-base font-bold text-slate-800">{currentModel.type}</p>
                   {currentModel.color && (
-                    <span className="mt-3 inline-flex items-center gap-1 rounded-full bg-gradient-to-r from-rose-500 via-amber-400 to-cyan-500 px-3 py-1 text-[10px] font-black uppercase tracking-widest text-white shadow-md">
+                    <span className="mt-2 inline-flex items-center gap-1 rounded-full bg-gradient-to-r from-rose-500 via-amber-400 to-cyan-500 px-3 py-1 text-[10px] font-black uppercase tracking-widest text-white shadow-md">
                       <span className="w-2 h-2 rounded-full bg-white animate-pulse"></span>
                       Colour Print
                     </span>
@@ -656,16 +650,17 @@ const PrinterSpecs = () => {
                 </div>
               </div>
 
-              <div className="flex flex-col p-6 lg:p-8 lg:col-span-7">
-                <div className="mb-6 flex items-center border-b-2 border-[#F26522] pb-3">
+              {/* Right panel - specs */}
+              <div className="flex flex-col p-5 lg:p-6 lg:col-span-7">
+                <div className="mb-3 flex items-center border-b-2 border-[#F26522] pb-2">
                   <h3 className="text-lg sm:text-xl font-black uppercase tracking-tight text-slate-900">
                     Full Specifications
                   </h3>
                 </div>
 
                 <div className="pr-1">
-                  <table className="w-full border-collapse text-xs lg:text-sm">
-                    <tbody className="divide-y divide-slate-100">
+                  <table className="w-full border-collapse" style={{ fontSize: "11px", lineHeight: "1.15" }}>
+                    <tbody>
                       {(() => {
                         const specs = currentModel.specs;
                         const rows = [];
@@ -674,41 +669,47 @@ const PrinterSpecs = () => {
                           const col2 = specs[i + 1];
                           const col3 = specs[i + 2];
                           rows.push(
-                            <tr key={i} className="hover:bg-slate-50/80 transition-colors">
-                              <td className="py-2 pr-2 text-slate-500 font-semibold w-[18%] align-top leading-snug text-[13px]">
+                            <tr
+                              key={i}
+                              className={`hover:bg-slate-50/80 transition-colors ${i % 6 === 0 ? "bg-white" : "bg-slate-50/30"}`}
+                            >
+                              {/* Col 1 */}
+                              <td style={{ padding: "2px 6px 2px 0", verticalAlign: "middle" }} className="text-slate-500 font-semibold w-[19%] leading-none">
                                 {col1.label}
                               </td>
-                              <td className="py-2 pr-3 font-bold text-slate-800 w-[15%] align-top">
+                              <td style={{ padding: "2px 8px 2px 0", verticalAlign: "middle" }} className="font-bold text-slate-800 w-[14%]">
                                 {renderValueBadge(col1.value)}
                               </td>
+                              {/* Col 2 */}
                               {col2 ? (
                                 <>
-                                  <td className="py-2 pr-2 text-slate-500 font-semibold w-[18%] align-top leading-snug border-l border-slate-100 pl-3 text-[13px]">
+                                  <td style={{ padding: "2px 6px 2px 10px", verticalAlign: "middle" }} className="text-slate-500 font-semibold w-[19%] leading-none border-l border-slate-100">
                                     {col2.label}
                                   </td>
-                                  <td className="py-2 pr-3 font-bold text-slate-800 w-[15%] align-top">
+                                  <td style={{ padding: "2px 8px 2px 0", verticalAlign: "middle" }} className="font-bold text-slate-800 w-[14%]">
                                     {renderValueBadge(col2.value)}
                                   </td>
                                 </>
                               ) : (
                                 <>
-                                  <td className="border-l border-slate-100 pl-3 w-[18%]"></td>
-                                  <td className="w-[15%]"></td>
+                                  <td className="border-l border-slate-100 w-[19%]"></td>
+                                  <td className="w-[14%]"></td>
                                 </>
                               )}
+                              {/* Col 3 */}
                               {col3 ? (
                                 <>
-                                  <td className="py-2 pr-2 text-slate-500 font-semibold w-[18%] align-top leading-snug border-l border-slate-100 pl-3 text-[13px]">
+                                  <td style={{ padding: "2px 6px 2px 10px", verticalAlign: "middle" }} className="text-slate-500 font-semibold w-[19%] leading-none border-l border-slate-100">
                                     {col3.label}
                                   </td>
-                                  <td className="py-2 font-bold text-slate-800 w-[16%] align-top">
+                                  <td style={{ padding: "2px 0 2px 0", verticalAlign: "middle" }} className="font-bold text-slate-800 w-[15%]">
                                     {renderValueBadge(col3.value)}
                                   </td>
                                 </>
                               ) : (
                                 <>
-                                  <td className="border-l border-slate-100 pl-3 w-[18%]"></td>
-                                  <td className="w-[16%]"></td>
+                                  <td className="border-l border-slate-100 w-[19%]"></td>
+                                  <td className="w-[15%]"></td>
                                 </>
                               )}
                             </tr>
@@ -720,19 +721,19 @@ const PrinterSpecs = () => {
                   </table>
                 </div>
 
-                <div className="mt-6 flex gap-4 border-t border-slate-200 pt-5">
+                <div className="mt-4 flex gap-4 border-t border-slate-200 pt-4">
                   <button
                     type="button"
                     onClick={handlePrevious}
                     disabled={currentIndex === 0}
-                    className="flex-1 rounded-xl border border-slate-200 bg-white px-6 py-3.5 text-sm font-black uppercase tracking-wider text-slate-700 transition-all duration-300 hover:border-[#F26522] hover:text-[#F26522] hover:shadow-md disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:border-slate-200 disabled:hover:text-slate-700 disabled:hover:shadow-none"
+                    className="flex-1 rounded-xl border border-slate-200 bg-white px-6 py-3 text-sm font-black uppercase tracking-wider text-slate-700 transition-all duration-300 hover:border-[#F26522] hover:text-[#F26522] hover:shadow-md disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:border-slate-200 disabled:hover:text-slate-700 disabled:hover:shadow-none"
                   >
                     ← Previous
                   </button>
                   <button
                     type="button"
                     onClick={handleNext}
-                    className="flex-1 rounded-xl bg-gradient-to-r from-[#F26522] to-[#d95316] px-6 py-3.5 text-sm font-black uppercase tracking-wider text-white shadow-lg shadow-orange-500/20 transition-all duration-300 hover:shadow-xl hover:translate-y-[-2px] active:translate-y-0"
+                    className="flex-1 rounded-xl bg-gradient-to-r from-[#F26522] to-[#d95316] px-6 py-3 text-sm font-black uppercase tracking-wider text-white shadow-lg shadow-orange-500/20 transition-all duration-300 hover:shadow-xl hover:translate-y-[-2px] active:translate-y-0"
                   >
                     Next →
                   </button>
@@ -741,47 +742,70 @@ const PrinterSpecs = () => {
             </div>
           </div>
         ) : (
-          <div key="summary" className="animate-fade-in rounded-3xl border border-slate-200 bg-white p-6 sm:p-8 shadow-2xl shadow-slate-200/50">
-            <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-              <div>
-                <h2 className="text-2xl sm:text-3xl font-black text-[#F26522]">Printer/MFP Datasheet</h2>
-              </div>
-              <span className="rounded-full bg-slate-900 px-5 py-2 text-xs font-black uppercase tracking-widest text-white shadow-md">
+          /* Summary Page */
+          <div key="summary" className="animate-fade-in rounded-3xl border border-slate-200 bg-white p-4 shadow-2xl shadow-slate-200/50">
+            <div className="mb-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+              <h2 className="text-xl font-black text-[#F26522]">Printer/MFP Datasheet</h2>
+              <span className="rounded-full bg-slate-900 px-4 py-1.5 text-[9px] font-black uppercase tracking-widest text-white shadow-md">
                 End of Catalogue
               </span>
             </div>
 
-            <div className="overflow-x-auto rounded-xl border border-slate-200">
-              <table className="w-full border-collapse text-[10px] lg:text-xs" style={{ minWidth: "3200px" }}>
+            <div className="overflow-auto rounded-xl border border-slate-200">
+              <table className="border-collapse" style={{ fontSize: "11px", lineHeight: "1.3", width: "max-content", minWidth: "100%" }}>
                 <thead>
                   <tr className="bg-slate-900 text-white">
                     {summaryColumns.map((col, i) => (
                       <th
                         key={i}
-                        className="border border-slate-700 p-2 text-left font-bold uppercase tracking-wide align-top sticky top-0 bg-slate-900 z-10"
-                        style={{ whiteSpace: "normal", minWidth: "90px" }}
+                        className="border border-slate-700 font-bold uppercase tracking-wide text-center"
+                        style={{
+                          padding: "6px 7px",
+                          whiteSpace: "normal",
+                          minWidth: i === 0 ? "62px" : "70px",
+                          maxWidth: "95px",
+                          wordBreak: "break-word",
+                          position: "sticky",
+                          top: 0,
+                          background: "#0f172a",
+                          zIndex: 10,
+                          verticalAlign: "middle",
+                        }}
                       >
                         {col.header}
                       </th>
                     ))}
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-slate-100">
+                <tbody>
                   {modelsData.map((model, idx) => {
                     const g = (label) => model.specs.find((s) => s.label === label)?.value ?? "—";
                     return (
-                      <tr key={model.id} className={`hover:bg-slate-50 transition-colors ${idx % 2 === 0 ? "bg-white" : "bg-slate-50/50"}`}>
+                      <tr
+                        key={model.id}
+                        className={idx % 2 === 0 ? "bg-white" : "bg-slate-50/50"}
+                        style={{ transition: "background 0.15s" }}
+                        onMouseEnter={e => e.currentTarget.style.background = "#fff7ed"}
+                        onMouseLeave={e => e.currentTarget.style.background = idx % 2 === 0 ? "#fff" : "#f8fafc"}
+                      >
                         {summaryColumns.map((col, ci) => {
                           const val = g(col.key);
-                          const isAcxxelCol = col.key === "Acxxel";
+                          const isAcxxel = col.key === "acxxel";
                           return (
                             <td
                               key={ci}
-                              className={`border border-slate-200 p-2 whitespace-nowrap ${
-                                isAcxxelCol ? "font-black text-[#F26522]" : ""
-                              }`}
+                              className="border border-slate-200"
+                              style={{
+                                padding: "5px 7px",
+                                whiteSpace: "nowrap",
+                                fontWeight: isAcxxel ? 900 : 500,
+                                color: isAcxxel ? "#F26522" : "#1e293b",
+                              }}
                             >
-                              {badgeCols.has(col.key) ? renderValueBadge(val) : <span className="font-medium text-slate-800">{val}</span>}
+                              {badgeCols.has(col.key)
+                                ? renderValueBadge(val)
+                                : <span>{val}</span>
+                              }
                             </td>
                           );
                         })}
@@ -792,18 +816,18 @@ const PrinterSpecs = () => {
               </table>
             </div>
 
-            <div className="mt-6 flex gap-4">
+            <div className="mt-3 flex gap-3">
               <button
                 type="button"
                 onClick={handlePrevious}
-                className="rounded-xl border border-slate-200 bg-white px-6 py-3.5 text-sm font-black uppercase tracking-wider text-slate-700 transition-all hover:border-[#F26522] hover:text-[#F26522] hover:shadow-md"
+                className="rounded-xl border border-slate-200 bg-white px-5 py-2.5 text-xs font-black uppercase tracking-wider text-slate-700 transition-all hover:border-[#F26522] hover:text-[#F26522] hover:shadow-md"
               >
                 ← Previous Page
               </button>
               <button
                 type="button"
                 disabled
-                className="rounded-xl bg-slate-400 px-6 py-3.5 text-sm font-black uppercase tracking-wider text-white cursor-not-allowed"
+                className="rounded-xl bg-slate-400 px-5 py-2.5 text-xs font-black uppercase tracking-wider text-white cursor-not-allowed"
               >
                 END
               </button>
