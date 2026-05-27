@@ -41,7 +41,7 @@ const PrinterSpecs = () => {
         { label: "Bypass Tray Capacity", value: "1" },
         { label: "Duty Cycle (Prints/Month)", value: "60,000" },
         { label: "Feeder Cap. (Sheets)", value: "NA" },
-        { label: "Max Prints (Warranty)", value: "600,000" },
+        { label: "Max Number of prints covered under product warranty", value: "600,000" },
         { label: "A4 Scan Speed Colour (IPM)", value: "NA" },
         { label: "Printer Technology", value: "Laser" },
         { label: "Fax Available", value: "NA" },
@@ -85,7 +85,7 @@ const PrinterSpecs = () => {
         { label: "Bypass Tray Capacity", value: "1" },
         { label: "Duty Cycle (Prints/Month)", value: "30,000" },
         { label: "Feeder Cap. (Sheets)", value: "NA" },
-        { label: "Max Prints (Warranty)", value: "300,000" },
+        { label: "Max Number of prints covered under product warranty", value: "300,000" },
         { label: "A4 Scan Speed Colour (IPM)", value: "NA" },
         { label: "Printer Technology", value: "Laser" },
         { label: "Fax Available", value: "NA" },
@@ -129,7 +129,7 @@ const PrinterSpecs = () => {
         { label: "Bypass Tray Capacity", value: "NA" },
         { label: "Duty Cycle (Prints/Month)", value: "15,000" },
         { label: "Feeder Cap. (Sheets)", value: "NA" },
-        { label: "Max Prints (Warranty)", value: "120,000" },
+        { label: "Max Number of prints covered under product warranty", value: "120,000" },
         { label: "A4 Scan Speed Colour (IPM)", value: "NA" },
         { label: "Printer Technology", value: "Laser" },
         { label: "Fax Available", value: "NA" },
@@ -173,7 +173,7 @@ const PrinterSpecs = () => {
         { label: "Bypass Tray Capacity", value: "NA" },
         { label: "Duty Cycle (Prints/Month)", value: "20,000" },
         { label: "Feeder Cap. (Sheets)", value: "NA" },
-        { label: "Max Prints (Warranty)", value: "220,000" },
+        { label: "Max Number of prints covered under product warranty", value: "220,000" },
         { label: "A4 Scan Speed Colour (IPM)", value: "NA" },
         { label: "Printer Technology", value: "Laser" },
         { label: "Fax Available", value: "NA" },
@@ -217,7 +217,7 @@ const PrinterSpecs = () => {
         { label: "Bypass Tray Capacity", value: "NA" },
         { label: "Duty Cycle (Prints/Month)", value: "20,000" },
         { label: "Feeder Cap. (Sheets)", value: "NA" },
-        { label: "Max Prints (Warranty)", value: "200,000" },
+        { label: "Max Number of prints covered under product warranty", value: "200,000" },
         { label: "A4 Scan Speed Colour (IPM)", value: "NA" },
         { label: "Printer Technology", value: "Laser" },
         { label: "Fax Available", value: "NA" },
@@ -257,11 +257,11 @@ const PrinterSpecs = () => {
         { label: "Auto Duplex", value: "ADF" },
         { label: "Yield Per Toner", value: "2,000" },
         { label: "Paper Tray (pages)", value: "250" },
-        { label: "Bypass Tray Facility", value: "Yes" },
-        { label: "Bypass Tray Capacity", value: "1" },
+        { label: "Bypass Tray Facility", value: "NA" },
+        { label: "Bypass Tray Capacity", value: "NA" },
         { label: "Duty Cycle (Prints/Month)", value: "60,000" },
         { label: "Feeder Cap. (Sheets)", value: "50 Pages" },
-        { label: "Max Prints (Warranty)", value: "22,000" },
+        { label: "Max Number of prints covered under product warranty", value: "50000" },
         { label: "A4 Scan Speed Colour (IPM)", value: "24" },
         { label: "Printer Technology", value: "Laser" },
         { label: "Fax Available", value: "NA" },
@@ -298,14 +298,14 @@ const PrinterSpecs = () => {
         { label: "Network", value: "Yes" },
         { label: "Mobile Printing", value: "Yes" },
         { label: "NFC", value: "Yes" },
-        { label: "Auto Duplex", value: "SPDF" },
+        { label: "Auto Duplex", value: "DADF/RADF" },
         { label: "Yield Per Toner", value: "3,000" },
         { label: "Paper Tray (pages)", value: "250" },
         { label: "Bypass Tray Facility", value: "Yes" },
         { label: "Bypass Tray Capacity", value: "60" },
         { label: "Duty Cycle (Prints/Month)", value: "100,000" },
         { label: "Feeder Cap. (Sheets)", value: "50 Pages" },
-        { label: "Max Prints (Warranty)", value: "84,000" },
+        { label: "Max Number of prints covered under product warranty", value: "800000" },
         { label: "A4 Scan Speed Colour (IPM)", value: "24" },
         { label: "Printer Technology", value: "Laser" },
         { label: "Fax Available", value: "NA" },
@@ -349,7 +349,7 @@ const PrinterSpecs = () => {
         { label: "Bypass Tray Capacity", value: "60" },
         { label: "Duty Cycle (Prints/Month)", value: "100,000" },
         { label: "Feeder Cap. (Sheets)", value: "50 Pages" },
-        { label: "Max Prints (Warranty)", value: "840,000" },
+        { label: "Max Number of prints covered under product warranty", value: "100000" },
         { label: "A4 Scan Speed Colour (IPM)", value: "24" },
         { label: "Printer Technology", value: "Laser" },
         { label: "Fax Available", value: "NA" },
@@ -390,10 +390,10 @@ const PrinterSpecs = () => {
         { label: "Yield Per Toner", value: "3,000" },
         { label: "Paper Tray (pages)", value: "250" },
         { label: "Bypass Tray Facility", value: "Yes" },
-        { label: "Bypass Tray Capacity", value: "1" },
+        { label: "Bypass Tray Capacity", value: "250" },
         { label: "Duty Cycle (Prints/Month)", value: "30,000" },
         { label: "Feeder Cap. (Sheets)", value: "50 Pages" },
-        { label: "Max Prints (Warranty)", value: "300,000" },
+        { label: "Max Number of prints covered under product warranty", value: "300,000" },
         { label: "A4 Scan Speed Colour (IPM)", value: "NA" },
         { label: "Printer Technology", value: "Laser" },
         { label: "Fax Available", value: "NA" },
@@ -458,7 +458,7 @@ const PrinterSpecs = () => {
   };
 
   const summaryColumns = [
-    { key: "acxxel", header: <span>Acxxel</span> },
+    { key: "acxxel", header: <span>acxxel</span> },
     { key: "Function", header: <span>Function</span> },
     { key: "Duplex Printing", header: <span>Duplex<br/>Printing</span> },
     { key: "Mono", header: <span>Mono</span> },
@@ -480,7 +480,7 @@ const PrinterSpecs = () => {
     { key: "Bypass Tray Capacity", header: <span>Bypass Tray<br/>Capacity</span> },
     { key: "Duty Cycle (Prints/Month)", header: <span>Duty Cycle<br/>(Prints/Month)</span> },
     { key: "Feeder Cap. (Sheets)", header: <span>Feeder Cap.<br/>(Sheets)</span> },
-    { key: "Max Prints (Warranty)", header: <span>Max Prints<br/>(Warranty)</span> },
+    { key: "Max Number of prints covered under product warranty", header: <span>Max Number of prints covered <br/>under product warranty</span> },
     { key: "A4 Scan Speed Colour (IPM)", header: <span>A4 Scan Speed<br/>Colour (IPM)</span> },
     { key: "Printer Technology", header: <span>Printer<br/>Technology</span> },
     { key: "Fax Available", header: <span>Fax<br/>Available</span> },
@@ -674,42 +674,42 @@ const PrinterSpecs = () => {
                               className={`hover:bg-slate-50/80 transition-colors ${i % 6 === 0 ? "bg-white" : "bg-slate-50/30"}`}
                             >
                               {/* Col 1 */}
-                              <td style={{ padding: "2px 6px 2px 0", verticalAlign: "middle" }} className="text-slate-500 font-semibold w-[19%] leading-none">
+                              <td style={{ padding: "2px 4px 2px 0", verticalAlign: "middle" }} className="text-slate-500 font-semibold w-[20%] leading-none">
                                 {col1.label}
                               </td>
-                              <td style={{ padding: "2px 8px 2px 0", verticalAlign: "middle" }} className="font-bold text-slate-800 w-[14%]">
+                              <td style={{ padding: "2px 4px 2px 0", verticalAlign: "middle" }} className="font-bold text-slate-800 w-[11%]">
                                 {renderValueBadge(col1.value)}
                               </td>
                               {/* Col 2 */}
                               {col2 ? (
                                 <>
-                                  <td style={{ padding: "2px 6px 2px 10px", verticalAlign: "middle" }} className="text-slate-500 font-semibold w-[19%] leading-none border-l border-slate-100">
+                                  <td style={{ padding: "2px 4px 2px 6px", verticalAlign: "middle" }} className="text-slate-500 font-semibold w-[20%] leading-none border-l border-slate-200">
                                     {col2.label}
                                   </td>
-                                  <td style={{ padding: "2px 8px 2px 0", verticalAlign: "middle" }} className="font-bold text-slate-800 w-[14%]">
+                                  <td style={{ padding: "2px 4px 2px 0", verticalAlign: "middle" }} className="font-bold text-slate-800 w-[11%]">
                                     {renderValueBadge(col2.value)}
                                   </td>
                                 </>
                               ) : (
                                 <>
-                                  <td className="border-l border-slate-100 w-[19%]"></td>
-                                  <td className="w-[14%]"></td>
+                                  <td className="border-l border-slate-200 w-[20%]"></td>
+                                  <td className="w-[11%]"></td>
                                 </>
                               )}
                               {/* Col 3 */}
                               {col3 ? (
                                 <>
-                                  <td style={{ padding: "2px 6px 2px 10px", verticalAlign: "middle" }} className="text-slate-500 font-semibold w-[19%] leading-none border-l border-slate-100">
+                                  <td style={{ padding: "2px 4px 2px 6px", verticalAlign: "middle" }} className="text-slate-500 font-semibold w-[20%] leading-none border-l border-slate-200">
                                     {col3.label}
                                   </td>
-                                  <td style={{ padding: "2px 0 2px 0", verticalAlign: "middle" }} className="font-bold text-slate-800 w-[15%]">
+                                  <td style={{ padding: "2px 0 2px 0", verticalAlign: "middle" }} className="font-bold text-slate-800 w-[18%]">
                                     {renderValueBadge(col3.value)}
                                   </td>
                                 </>
                               ) : (
                                 <>
-                                  <td className="border-l border-slate-100 w-[19%]"></td>
-                                  <td className="w-[15%]"></td>
+                                  <td className="border-l border-slate-200 w-[20%]"></td>
+                                  <td className="w-[18%]"></td>
                                 </>
                               )}
                             </tr>
