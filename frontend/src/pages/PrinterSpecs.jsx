@@ -450,7 +450,6 @@ const PrinterSpecs = () => {
 
   const renderValueBadge = (value) => {
     if (!value || value === "—") return <span className="text-slate-400">—</span>;
-    if (value === "Yes" || value === "YES") return <span className="inline-flex items-center px-1.5 py-0 rounded bg-emerald-100 text-emerald-800 text-[9px] font-bold tracking-wide">YES</span>;
     if (value === "NA") return <span className="inline-flex items-center px-1.5 py-0 rounded bg-slate-100 text-slate-500 text-[9px] font-bold tracking-wide">NA</span>;
     if (value.includes("Colour")) return <span className="inline-flex items-center px-1.5 py-0 rounded bg-blue-100 text-blue-800 text-[9px] font-bold tracking-wide">COLOUR</span>;
     if (value.includes("Mono")) return <span className="inline-flex items-center px-1.5 py-0 rounded bg-slate-200 text-slate-800 text-[9px] font-bold tracking-wide">MONO</span>;
@@ -501,7 +500,7 @@ const PrinterSpecs = () => {
   ]);
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 px-4 py-8 font-sans">
+    <section className="min-h-screen bg-white px-4 py-8 font-sans">
       <div className="mx-auto max-w-7xl">
 
         {/* Header */}
@@ -572,7 +571,7 @@ const PrinterSpecs = () => {
             <div className="grid grid-cols-1 lg:grid-cols-12 items-start">
 
               {/* Left panel - image */}
-              <div className="border-b border-slate-200 bg-gradient-to-b from-slate-50 to-white p-5 lg:border-b-0 lg:border-r lg:col-span-5 flex flex-col">
+              <div className="border-b border-slate-200 bg-white p-5 lg:border-b-0 lg:border-r lg:col-span-5 flex flex-col">
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex flex-col gap-1">
                     <span className="rounded-full bg-slate-900 px-4 py-1 text-[10px] font-black uppercase tracking-widest text-white shadow-md">
@@ -671,7 +670,7 @@ const PrinterSpecs = () => {
                           rows.push(
                             <tr
                               key={i}
-                              className={`hover:bg-slate-50/80 transition-colors ${i % 6 === 0 ? "bg-white" : "bg-slate-50/30"}`}
+                              className="hover:bg-slate-50/80 transition-colors bg-white"
                             >
                               {/* Col 1 */}
                               <td style={{ padding: "2px 4px 2px 0", verticalAlign: "middle" }} className="text-slate-500 font-semibold w-[20%] leading-none">
@@ -783,10 +782,10 @@ const PrinterSpecs = () => {
                     return (
                       <tr
                         key={model.id}
-                        className={idx % 2 === 0 ? "bg-white" : "bg-slate-50/50"}
+                        className="bg-white"
                         style={{ transition: "background 0.15s" }}
                         onMouseEnter={e => e.currentTarget.style.background = "#fff7ed"}
-                        onMouseLeave={e => e.currentTarget.style.background = idx % 2 === 0 ? "#fff" : "#f8fafc"}
+                        onMouseLeave={e => e.currentTarget.style.background = "#fff"}
                       >
                         {summaryColumns.map((col, ci) => {
                           const val = g(col.key);
