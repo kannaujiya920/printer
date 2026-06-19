@@ -261,7 +261,7 @@ const PrinterSpecs = () => {
         { label: "Bypass Tray Capacity", value: "NA" },
         { label: "Duty Cycle (Prints/Month)", value: "60,000" },
         { label: "Feeder Cap. (Sheets)", value: "50 Pages" },
-        { label: "Max Number of prints covered under product warranty", value: "50000" },
+        { label: "Max Number of prints covered under product warranty", value: "500000" },
         { label: "A4 Scan Speed Colour (IPM)", value: "24" },
         { label: "Printer Technology", value: "Laser" },
         { label: "Fax Available", value: "NA" },
