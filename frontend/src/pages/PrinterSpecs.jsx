@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const PrinterSpecs = () => {
@@ -433,19 +433,203 @@ const PrinterSpecs = () => {
     return `/Printer_image/${folderKey}/${viewMap[view]}`;
   };
 
-  const handleNext = () => {
-    setActiveView("front");
-    if (currentIndex < modelsData.length) setCurrentIndex((prev) => prev + 1);
-  };
-
-  const handlePrevious = () => {
-    setActiveView("front");
-    if (currentIndex > 0) setCurrentIndex((prev) => prev - 1);
-  };
-
   const handleModelClick = (idx) => {
     setActiveView("front");
     setCurrentIndex(idx);
+  };
+
+  const wrapPdfText = (text, maxChars) => {
+    const words = String(text ?? "").replace(/[^\x20-\x7E]/g, "-").split(/\s+/);
+    const lines = [];
+    let current = "";
+
+    words.forEach((word) => {
+      const next = current ? `${current} ${word}` : word;
+      if (next.length > maxChars && current) {
+        lines.push(current);
+        current = word;
+      } else {
+        current = next;
+      }
+    });
+
+    if (current) lines.push(current);
+    return lines.length ? lines : [""];
+  };
+
+  const loadImageElement = (src) =>
+    new Promise((resolve, reject) => {
+      const image = new Image();
+      image.onload = () => resolve(image);
+      image.onerror = reject;
+      image.src = src;
+    });
+
+  const createPdfBlob = (content, imageInfo) => {
+    const encoder = new TextEncoder();
+    const objects = [
+      ["<< /Type /Catalog /Pages 2 0 R >>"],
+      ["<< /Type /Pages /Kids [3 0 R] /Count 1 >>"],
+      ["<< /Type /Page /Parent 2 0 R /MediaBox [0 0 842 595] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> /XObject << /Im1 6 0 R >> >> /Contents 7 0 R >>"],
+      ["<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>"],
+      ["<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>"],
+      [
+        `<< /Type /XObject /Subtype /Image /Width ${imageInfo.width} /Height ${imageInfo.height} /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length ${imageInfo.data.length} >>\nstream\n`,
+        imageInfo.data,
+        "\nendstream",
+      ],
+      [`<< /Length ${encoder.encode(content).length} >>\nstream\n${content}\nendstream`],
+    ];
+
+    const parts = [encoder.encode("%PDF-1.4\n")];
+    const offsets = [0];
+    let position = parts[0].length;
+
+    objects.forEach((objectParts, index) => {
+      offsets.push(position);
+      const header = encoder.encode(`${index + 1} 0 obj\n`);
+      parts.push(header);
+      position += header.length;
+
+      objectParts.forEach((part) => {
+        const bytes = typeof part === "string" ? encoder.encode(part) : part;
+        parts.push(bytes);
+        position += bytes.length;
+      });
+
+      const footer = encoder.encode("\nendobj\n");
+      parts.push(footer);
+      position += footer.length;
+    });
+
+    const xrefStart = position;
+    let xref = `xref\n0 ${objects.length + 1}\n0000000000 65535 f \n`;
+    for (let i = 1; i <= objects.length; i += 1) {
+      xref += `${String(offsets[i]).padStart(10, "0")} 00000 n \n`;
+    }
+    xref += `trailer\n<< /Size ${objects.length + 1} /Root 1 0 R >>\nstartxref\n${xrefStart}\n%%EOF`;
+    parts.push(encoder.encode(xref));
+
+    return new Blob(parts, { type: "application/pdf" });
+  };
+
+  const handleDownloadSpecs = async (model) => {
+    const printerImage = await loadImageElement(getImagePath(model.folderKey, "front"));
+    const canvas = document.createElement("canvas");
+    canvas.width = 1684;
+    canvas.height = 1190;
+    const context = canvas.getContext("2d");
+
+    context.fillStyle = "#ffffff";
+    context.fillRect(0, 0, canvas.width, canvas.height);
+
+    context.fillStyle = "#ef1b2d";
+    context.font = "900 58px Arial";
+    context.fillText("acxxel", 90, 112);
+    context.fillStyle = "#f26522";
+    context.font = "900 44px Arial";
+    context.textAlign = "right";
+    context.fillText(model.name, 1540, 106);
+    context.fillStyle = "#475569";
+    context.font = "700 18px Arial";
+    context.fillText(model.type, 1540, 136);
+    context.textAlign = "left";
+
+    context.strokeStyle = "#f26522";
+    context.lineWidth = 4;
+    context.beginPath();
+    context.moveTo(90, 180);
+    context.lineTo(1594, 180);
+    context.stroke();
+
+    context.strokeStyle = "#dbe3ef";
+    context.lineWidth = 2;
+    context.strokeRect(90, 230, 560, 690);
+
+    const imageMaxWidth = 500;
+    const imageMaxHeight = 520;
+    const imageScale = Math.min(imageMaxWidth / printerImage.naturalWidth, imageMaxHeight / printerImage.naturalHeight);
+    const imageWidth = printerImage.naturalWidth * imageScale;
+    const imageHeight = printerImage.naturalHeight * imageScale;
+    const imageX = 120 + (imageMaxWidth - imageWidth) / 2;
+    const imageY = 300 + (imageMaxHeight - imageHeight) / 2;
+    context.drawImage(printerImage, imageX, imageY, imageWidth, imageHeight);
+
+    context.fillStyle = "#f26522";
+    context.font = "900 32px Arial";
+    context.textAlign = "center";
+    context.fillText(model.name, 370, 982);
+    context.fillStyle = "#475569";
+    context.font = "700 18px Arial";
+    context.fillText(model.tag, 370, 1014);
+    context.textAlign = "left";
+
+    context.fillStyle = "#061637";
+    context.font = "900 30px Arial";
+    context.fillText("FULL SPECIFICATIONS", 710, 252);
+
+    const colX = [710, 1160];
+    const labelWidth = 220;
+    const valueWidth = 175;
+    const topY = 300;
+    const rowHeight = 38;
+
+    model.specs.forEach((spec, index) => {
+      const column = index < 17 ? 0 : 1;
+      const row = column === 0 ? index : index - 17;
+      const x = colX[column];
+      const y = topY + row * rowHeight;
+      const labelLines = wrapPdfText(spec.label, 23).slice(0, 2);
+      const valueLines = wrapPdfText(spec.value, 18).slice(0, 2);
+
+      context.strokeStyle = "#e2e8f0";
+      context.lineWidth = 1;
+      context.beginPath();
+      context.moveTo(x, y + 22);
+      context.lineTo(x + labelWidth + valueWidth, y + 22);
+      context.stroke();
+      context.beginPath();
+      context.moveTo(x + labelWidth - 12, y - 20);
+      context.lineTo(x + labelWidth - 12, y + 22);
+      context.stroke();
+      context.beginPath();
+      context.moveTo(x + labelWidth + valueWidth, y - 20);
+      context.lineTo(x + labelWidth + valueWidth, y + 22);
+      context.stroke();
+
+      context.fillStyle = "#475569";
+      context.font = "700 15px Arial";
+      labelLines.forEach((line, lineIndex) => {
+        context.fillText(line, x, y - lineIndex * -15);
+      });
+
+      context.fillStyle = "#061637";
+      context.font = "900 15px Arial";
+      valueLines.forEach((line, lineIndex) => {
+        context.fillText(line, x + labelWidth, y - lineIndex * -15);
+      });
+    });
+
+    context.fillStyle = "#64748b";
+    context.font = "14px Arial";
+    context.fillText("Generated from acxxel Printer / MFA Catalogue", 90, 1125);
+
+    const imageDataUrl = canvas.toDataURL("image/jpeg", 0.92);
+    const imageInfo = {
+      data: Uint8Array.from(atob(imageDataUrl.split(",")[1]), (char) => char.charCodeAt(0)),
+      width: canvas.width,
+      height: canvas.height,
+    };
+    const commands = ["q 842 0 0 595 0 0 cm /Im1 Do Q"];
+    const blob = createPdfBlob(commands.join("\n"), imageInfo);
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `${model.name}-specs.pdf`;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    URL.revokeObjectURL(url);
   };
 
   const renderValueBadge = (value) => {
@@ -651,10 +835,20 @@ const PrinterSpecs = () => {
 
               {/* Right panel - specs */}
               <div className="flex flex-col p-5 lg:p-6 lg:col-span-7">
-                <div className="mb-3 flex items-center border-b-2 border-[#F26522] pb-2">
+                <div className="mb-3 flex flex-col gap-3 border-b-2 border-[#F26522] pb-2 sm:flex-row sm:items-center sm:justify-between">
                   <h3 className="text-lg sm:text-xl font-black uppercase tracking-tight text-slate-900">
                     Full Specifications
                   </h3>
+                  <button
+                    type="button"
+                    onClick={() => handleDownloadSpecs(currentModel)}
+                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#F26522] px-4 py-2 text-xs font-black uppercase tracking-wider text-white shadow-lg shadow-orange-500/20 transition-all duration-300 hover:bg-[#d95316] hover:shadow-xl"
+                  >
+                    <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v12m0 0l4-4m-4 4l-4-4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2" />
+                    </svg>
+                    Download
+                  </button>
                 </div>
 
                 <div className="pr-1">
@@ -720,23 +914,6 @@ const PrinterSpecs = () => {
                   </table>
                 </div>
 
-                <div className="mt-4 flex gap-4 border-t border-slate-200 pt-4">
-                  <button
-                    type="button"
-                    onClick={handlePrevious}
-                    disabled={currentIndex === 0}
-                    className="flex-1 rounded-xl border border-slate-200 bg-white px-6 py-3 text-sm font-black uppercase tracking-wider text-slate-700 transition-all duration-300 hover:border-[#F26522] hover:text-[#F26522] hover:shadow-md disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:border-slate-200 disabled:hover:text-slate-700 disabled:hover:shadow-none"
-                  >
-                    ← Previous
-                  </button>
-                  <button
-                    type="button"
-                    onClick={handleNext}
-                    className="flex-1 rounded-xl bg-gradient-to-r from-[#F26522] to-[#d95316] px-6 py-3 text-sm font-black uppercase tracking-wider text-white shadow-lg shadow-orange-500/20 transition-all duration-300 hover:shadow-xl hover:translate-y-[-2px] active:translate-y-0"
-                  >
-                    Next →
-                  </button>
-                </div>
               </div>
             </div>
           </div>
@@ -774,10 +951,25 @@ const PrinterSpecs = () => {
                         {col.header}
                       </th>
                     ))}
+                    <th
+                      className="border border-slate-700 font-bold uppercase tracking-wide text-center"
+                      style={{
+                        padding: "6px 7px",
+                        minWidth: "110px",
+                        position: "sticky",
+                        top: 0,
+                        right: 0,
+                        background: "#0f172a",
+                        zIndex: 12,
+                        verticalAlign: "middle",
+                      }}
+                    >
+                      Download
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
-                  {modelsData.map((model, idx) => {
+                  {modelsData.map((model) => {
                     const g = (label) => model.specs.find((s) => s.label === label)?.value ?? "—";
                     return (
                       <tr
@@ -808,6 +1000,27 @@ const PrinterSpecs = () => {
                             </td>
                           );
                         })}
+                        <td
+                          className="border border-slate-200 bg-white text-center"
+                          style={{
+                            padding: "5px 7px",
+                            position: "sticky",
+                            right: 0,
+                            zIndex: 5,
+                          }}
+                        >
+                          <button
+                            type="button"
+                            onClick={() => handleDownloadSpecs(model)}
+                            className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-[#F26522] px-3 py-1.5 text-[10px] font-black uppercase tracking-wider text-white shadow-sm transition-all hover:bg-[#d95316] hover:shadow-md"
+                            aria-label={`Download ${model.name} specs`}
+                          >
+                            <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v12m0 0l4-4m-4 4l-4-4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2" />
+                            </svg>
+                            Specs
+                          </button>
+                        </td>
                       </tr>
                     );
                   })}
@@ -815,22 +1028,6 @@ const PrinterSpecs = () => {
               </table>
             </div>
 
-            <div className="mt-3 flex gap-3">
-              <button
-                type="button"
-                onClick={handlePrevious}
-                className="rounded-xl border border-slate-200 bg-white px-5 py-2.5 text-xs font-black uppercase tracking-wider text-slate-700 transition-all hover:border-[#F26522] hover:text-[#F26522] hover:shadow-md"
-              >
-                ← Previous Page
-              </button>
-              <button
-                type="button"
-                disabled
-                className="rounded-xl bg-slate-400 px-5 py-2.5 text-xs font-black uppercase tracking-wider text-white cursor-not-allowed"
-              >
-                END
-              </button>
-            </div>
           </div>
         )}
       </div>
